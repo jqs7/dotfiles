@@ -1,1 +1,0 @@
-/home/se7en/.zshrc
