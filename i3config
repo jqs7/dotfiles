@@ -27,7 +27,7 @@ font pango:Wen Quan Yi MicroHei Mono,9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec tilda
+bindsym $mod+Return exec lilyterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
