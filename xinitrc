@@ -1,0 +1,1 @@
+/home/se7en/.xinitrc
