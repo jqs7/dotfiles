@@ -79,10 +79,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=$PATH:~/.gem/ruby/2.2.0/bin
 export GOPATH=~/GOPATH
-export PATH=$PATH:~/bin:$GOPATH/bin
+export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin:/usr/bin
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-
