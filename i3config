@@ -149,11 +149,13 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3blocks
 colors {
-    background #073642
-    statusline #eee8d5
-    focused_workspace #cb4b16 #cb4b16 #eee8d5
-    active_workspace #cb4b16 #cb4b16 #eee8d5
-    inactive_workspace #b58900 #b58900 #eee8d5
+	background #222222
+	statusline #dddddd
+	separator #666666
+	focused_workspace #0088CC #0088CC #ffffff
+	active_workspace #333333 #333333 #888888
+	inactive_workspace #333333 #333333 #888888
+	urgent_workspace   #2f343a #900000 #ffffff
 }
 }
 
@@ -184,7 +186,8 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id fcitx
 exec --no-startup-id ~/cow
 # class                 border  backgr. text    indicator
-client.focused          #859900 #859900 #fdf6e3 #2e9ef4
-client.focused_inactive #268bd2 #268bd2 #fdf6e3 #484e50
-client.unfocused        #333333 #93a1a1 #fdf6e3 #292d2e
-#client.urgent not defined yet
+client.focused          #0088CC #0088CC #ffffff #dddddd
+#client.focused_inactive #0C2D3C #0C2D3C #888888 #484e50 # I don't like it that way
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused        #333333 #333333 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
