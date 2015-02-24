@@ -165,6 +165,11 @@ mode "$mode_system" {
 }
 bindsym $mod+Shift+e mode "$mode_system"
 
+# 把当前窗口设为便笺本
+bindsym $mod+Shift+minus move scratchpad
+#
+# # 呼出第一个便笺本
+bindsym $mod+minus scratchpad show
 focus_follows_mouse no
 bindsym Mod4+Print exec xfce4-screenshooter
 for_window [class="Google-chrome" title="Google Chrome"] border none
