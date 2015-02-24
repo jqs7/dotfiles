@@ -184,7 +184,7 @@ bindsym Mod4+Print exec xfce4-screenshooter
 for_window [class="Google-chrome" title="Google Chrome"] border none
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id fcitx
-exec --no-startup-id ~/cow
+exec --no-startup-id ~/bin/cow
 # class                 border  backgr. text    indicator
 client.focused          #0088CC #0088CC #ffffff #dddddd
 #client.focused_inactive #0C2D3C #0C2D3C #888888 #484e50 # I don't like it that way
