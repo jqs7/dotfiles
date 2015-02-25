@@ -80,7 +80,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export GOPATH=~/GOPATH
-export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin:/usr/bin
+export GOBIN=~/bin
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin:/usr/bin:$GOBIN
