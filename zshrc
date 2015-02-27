@@ -46,7 +46,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux coffee nyan rails sudo systemd vagrant)
+plugins=(git archlinux coffee nyan rails sudo systemd vagrant docker)
 
 # User configuration
 

@@ -148,7 +148,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   status_command i3blocks
-colors {
+  colors {
 	background #222222
 	statusline #dddddd
 	separator #666666
@@ -156,7 +156,7 @@ colors {
 	active_workspace #333333 #333333 #888888
 	inactive_workspace #333333 #333333 #888888
 	urgent_workspace   #2f343a #900000 #ffffff
-}
+  }
 }
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -182,9 +182,9 @@ bindsym $mod+minus scratchpad show
 focus_follows_mouse no
 bindsym Mod4+Print exec xfce4-screenshooter
 for_window [class="Google-chrome" title="Google Chrome"] border none
+for_window [title="Oracle VM VirtualBox"] border none
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id fcitx
-exec --no-startup-id ~/bin/cow
 # class                 border  backgr. text    indicator
 client.focused          #0088CC #0088CC #ffffff #dddddd
 #client.focused_inactive #0C2D3C #0C2D3C #888888 #484e50 # I don't like it that way
