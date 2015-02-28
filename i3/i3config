@@ -180,7 +180,8 @@ bindsym $mod+Shift+minus move scratchpad
 # # 呼出第一个便笺本
 bindsym $mod+minus scratchpad show
 focus_follows_mouse no
-bindsym Mod4+Print exec xfce4-screenshooter
+bindsym $mod+Print exec xfce4-screenshooter
+bindsym $mod+Shift+d exec thunar
 for_window [class="Google-chrome" title="Google Chrome"] border none
 for_window [title="Oracle VM VirtualBox"] border none
 exec --no-startup-id nitrogen --restore

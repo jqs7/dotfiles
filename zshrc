@@ -85,4 +85,9 @@ export GOBIN=~/bin
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin:/usr/bin:$GOBIN
+export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin:$GOBIN
+function hugodeploy {
+    rm -rf /tmp/hugo
+    hugo -t hyde -s ~/MR-SE7EN -d /tmp/hugo
+    rsync -az --force --progress -e "ssh" --delete /tmp/hugo root@mr-se7en.com:/usr/share/nginx/html
+}
