@@ -20,4 +20,6 @@ exec i3
 # exec gnome-session
 # exec startkde
 # exec startxfce4
+# sxhkd &
+# exec bspwm
 # ...or the Window Manager of your choice
