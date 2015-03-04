@@ -86,6 +86,9 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin:$GOBIN
+alias a=atom
+alias gd='git diff  --ignore-space-change'
+alias hdg='hexo d -g'
 function hugodeploy {
     rm -rf /tmp/hugo
     hugo -t hyde -s ~/MR-SE7EN -d /tmp/hugo
