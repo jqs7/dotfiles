@@ -46,7 +46,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux coffee nyan rails sudo systemd vagrant docker)
+plugins=(git archlinux sudo systemd)
 
 # User configuration
 
@@ -86,9 +86,12 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin:$GOBIN
+export http_proxy=http://127.0.0.1:7777
+export https_proxy=http://127.0.0.1:7777
 alias a=atom
 alias gd='git diff  --ignore-space-change'
 alias hdg='hexo d -g'
+alias md='haroopad'
 function hugodeploy {
     rm -rf /tmp/hugo
     hugo -t hyde -s ~/MR-SE7EN -d /tmp/hugo
