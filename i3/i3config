@@ -89,17 +89,29 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+c focus child
 
+# Workspace names
+workspace "1  /" output LVDS
+workspace "2 " output LVDS
+workspace "3 " output LVDS
+workspace "4 " output LVDS
+workspace "5" output LVDS
+workspace "6  /" output VGA-0
+workspace "7 " output VGA-0
+workspace "8 " output VGA-0
+workspace "9 " output VGA-0
+workspace "10" output VGA-0
+
 # switch to workspace
 bindsym $mod+1 workspace 1  /
 bindsym $mod+2 workspace 2 
 bindsym $mod+3 workspace 3 
 bindsym $mod+4 workspace 4 
 bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+F1 workspace 6  /
+bindsym $mod+F2 workspace 7 
+bindsym $mod+F3 workspace 8 
+bindsym $mod+F4 workspace 9 
+bindsym $mod+F5 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1  /
@@ -107,11 +119,11 @@ bindsym $mod+Shift+2 move container to workspace 2 
 bindsym $mod+Shift+3 move container to workspace 3 
 bindsym $mod+Shift+4 move container to workspace 4 
 bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+F2 move container to workspace 6  /
+bindsym $mod+Shift+F1 move container to workspace 7 
+bindsym $mod+Shift+F3 move container to workspace 8 
+bindsym $mod+Shift+F4 move container to workspace 9 
+bindsym $mod+Shift+F5 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -182,6 +194,8 @@ bindsym $mod+minus scratchpad show
 focus_follows_mouse no
 bindsym $mod+Print exec mate-screenshot -i
 bindsym $mod+Shift+d exec thunar
+bindsym $mod+p exec xrandr --output LVDS --auto
+bindsym $mod+Shift+p exec xrandr --output VGA-0 --auto --output LVDS --off
 for_window [class="Google-chrome" title="Google Chrome"] border none
 for_window [title="Oracle VM VirtualBox"] border none
 exec --no-startup-id nitrogen --restore

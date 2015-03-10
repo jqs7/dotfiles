@@ -92,6 +92,7 @@ alias a=atom
 alias gd='git diff  --ignore-space-change'
 alias hdg='hexo d -g'
 alias md='haroopad'
+export VBOX_USB=usbfs
 function hugodeploy {
     rm -rf /tmp/hugo
     hugo -t hyde -s ~/MR-SE7EN -d /tmp/hugo
