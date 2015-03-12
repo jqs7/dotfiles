@@ -198,7 +198,7 @@ bindsym $mod+p exec xrandr --output LVDS --auto
 bindsym $mod+Shift+p exec xrandr --output VGA-0 --auto --output LVDS --off
 for_window [class="Google-chrome" title="Google Chrome"] border none
 for_window [title="Oracle VM VirtualBox"] border none
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id feh --bg-fill /home/se7en/Pictures/622bc895d143ad4b1396032482025aafa50f06b6.jpg
 exec --no-startup-id fcitx
 # class                 border  backgr. text    indicator
 client.focused          #0088CC #0088CC #ffffff #dddddd
