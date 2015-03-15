@@ -90,16 +90,16 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 # Workspace names
-workspace "1  /" output LVDS
-workspace "2 " output LVDS
-workspace "3 " output LVDS
-workspace "4 " output LVDS
-workspace "5" output LVDS
-workspace "6  /" output VGA-0
-workspace "7 " output VGA-0
-workspace "8 " output VGA-0
-workspace "9 " output VGA-0
-workspace "10" output VGA-0
+workspace "1  /" output VGA-0L
+workspace "2 " output VGA-0L
+workspace "3 " output VGA-0L
+workspace "4 " output VGA-0L
+workspace "5" output VGA-0L
+workspace "6  /" output VDS
+workspace "7 " output VDS
+workspace "8 " output VDS
+workspace "9 " output VDS
+workspace "10" output VDS
 
 # switch to workspace
 bindsym $mod+1 workspace 1  /
@@ -198,6 +198,7 @@ bindsym $mod+p exec xrandr --output LVDS --auto
 bindsym $mod+Shift+p exec xrandr --output VGA-0 --auto --output LVDS --off
 for_window [class="Google-chrome" title="Google Chrome"] border none
 for_window [title="Oracle VM VirtualBox"] border none
+for_window [class="Opera"] border none
 exec --no-startup-id feh --bg-fill /home/se7en/Pictures/622bc895d143ad4b1396032482025aafa50f06b6.jpg
 exec --no-startup-id fcitx
 # class                 border  backgr. text    indicator
