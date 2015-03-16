@@ -103,25 +103,25 @@ workspace "9 " output VDS
 workspace "10" output VDS
 
 # switch to workspace
-bindsym $mod+1 workspace 1  /
+bindsym $mod+1 workspace 1 
 bindsym $mod+2 workspace 2 
 bindsym $mod+3 workspace 3 
 bindsym $mod+4 workspace 4 
 bindsym $mod+5 workspace 5
-bindsym $mod+F1 workspace 6  /
+bindsym $mod+F1 workspace F1 
 bindsym $mod+F2 workspace 7 
 bindsym $mod+F3 workspace 8 
 bindsym $mod+F4 workspace 9 
 bindsym $mod+F5 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1  /
+bindsym $mod+Shift+1 move container to workspace 1 
 bindsym $mod+Shift+2 move container to workspace 2 
 bindsym $mod+Shift+3 move container to workspace 3 
 bindsym $mod+Shift+4 move container to workspace 4 
 bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+F2 move container to workspace 6  /
-bindsym $mod+Shift+F1 move container to workspace 7 
+bindsym $mod+Shift+F1 move container to workspace F1 
+bindsym $mod+Shift+F2 move container to workspace 7 
 bindsym $mod+Shift+F3 move container to workspace 8 
 bindsym $mod+Shift+F4 move container to workspace 9 
 bindsym $mod+Shift+F5 move container to workspace 10
@@ -203,6 +203,7 @@ for_window [class="Opera"] border none
 for_window [class="Do"] border none
 exec --no-startup-id feh --bg-fill /home/se7en/Pictures/622bc895d143ad4b1396032482025aafa50f06b6.jpg
 exec --no-startup-id fcitx
+exec --no-startup-id compton -b
 # class                 border  backgr. text    indicator
 client.focused          #0088CC #0088CC #ffffff #dddddd
 #client.focused_inactive #0C2D3C #0C2D3C #888888 #484e50 # I don't like it that way
