@@ -91,16 +91,16 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 # Workspace names
-workspace "1  /" output VGA-0L
-workspace "2 " output VGA-0L
-workspace "3 " output VGA-0L
-workspace "4 " output VGA-0L
-workspace "5" output VGA-0L
-workspace "6  /" output VDS
-workspace "7 " output VDS
-workspace "8 " output VDS
-workspace "9 " output VDS
-workspace "10" output VDS
+workspace "1 " output VGA-0
+workspace "2 " output VGA-0
+workspace "3 " output VGA-0
+workspace "4 " output VGA-0
+workspace "5" output VGA-0
+workspace "F1 " output VGA-0
+workspace "F2 " output VGA-0
+workspace "F3" output VGA-0
+workspace "F4" output VGA-0
+workspace "F5" output VGA-0
 
 # switch to workspace
 bindsym $mod+1 workspace 1 
@@ -109,10 +109,10 @@ bindsym $mod+3 workspace 3 
 bindsym $mod+4 workspace 4 
 bindsym $mod+5 workspace 5
 bindsym $mod+F1 workspace F1 
-bindsym $mod+F2 workspace 7 
-bindsym $mod+F3 workspace 8 
-bindsym $mod+F4 workspace 9 
-bindsym $mod+F5 workspace 10
+bindsym $mod+F2 workspace F2 
+bindsym $mod+F3 workspace F3
+bindsym $mod+F4 workspace F4
+bindsym $mod+F5 workspace F5
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1 
@@ -121,10 +121,10 @@ bindsym $mod+Shift+3 move container to workspace 3 
 bindsym $mod+Shift+4 move container to workspace 4 
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+F1 move container to workspace F1 
-bindsym $mod+Shift+F2 move container to workspace 7 
-bindsym $mod+Shift+F3 move container to workspace 8 
-bindsym $mod+Shift+F4 move container to workspace 9 
-bindsym $mod+Shift+F5 move container to workspace 10
+bindsym $mod+Shift+F2 move container to workspace F2 
+bindsym $mod+Shift+F3 move container to workspace F3
+bindsym $mod+Shift+F4 move container to workspace F4
+bindsym $mod+Shift+F5 move container to workspace F5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -139,16 +139,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -195,8 +195,9 @@ bindsym $mod+minus scratchpad show
 focus_follows_mouse no
 bindsym $mod+Print exec  xfce4-screenshooter
 bindsym $mod+Shift+d exec thunar
-bindsym $mod+p exec xrandr --output LVDS --auto
+bindsym $mod+p exec xrandr --output VGA-0 --right-of LVDS --mode 1920x1080 --output LVDS --mode 1366x768
 bindsym $mod+Shift+p exec xrandr --output VGA-0 --auto --output LVDS --off
+bindsym $mod+7 exec feh --bg-fill /home/se7en/Pictures/622bc895d143ad4b1396032482025aafa50f06b6.jpg
 for_window [class="Google-chrome" title="Google Chrome"] border none
 for_window [title="Oracle VM VirtualBox"] border none
 for_window [class="Opera"] border none
@@ -204,6 +205,9 @@ for_window [class="Do"] border none
 exec --no-startup-id feh --bg-fill /home/se7en/Pictures/622bc895d143ad4b1396032482025aafa50f06b6.jpg
 exec --no-startup-id fcitx
 exec --no-startup-id compton -b --config ~/.compton.conf
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s noblank
 # class                 border  backgr. text    indicator
 client.focused          #0088CC #0088CC #ffffff #dddddd
 #client.focused_inactive #0C2D3C #0C2D3C #888888 #484e50 # I don't like it that way

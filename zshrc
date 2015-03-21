@@ -46,7 +46,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux sudo systemd)
+plugins=(git archlinux sudo systemd encode64 autojump pass)
 
 # User configuration
 
@@ -92,9 +92,58 @@ alias a='atom -n false'
 alias gd='git diff  --ignore-space-change'
 alias hdg='hexo d -g'
 alias md='haroopad'
+alias adl='aria2c'
+alias adlrpc='aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all'
 export VBOX_USB=usbfs
 function hugodeploy {
     rm -rf /tmp/hugo
     hugo -t hyde -s ~/MR-SE7EN -d /tmp/hugo
     rsync -az --force --progress -e "ssh" --delete /tmp/hugo root@mr-se7en.com:/usr/share/nginx/html
 }
+# Copyright (c) npm, Inc. and Contributors
+# All rights reserved.
+
+###-begin-twei-completion-###
+### credits to npm, this file is coming directly from isaacs/npm repo
+#
+# Just testing for now. (trying to learn this cool stuff)
+#
+# npm command completion script
+#
+# Installation: twei completion >> ~/.bashrc  (or ~/.zshrc)
+#
+
+COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
+COMP_WORDBREAKS=${COMP_WORDBREAKS/@/}
+export COMP_WORDBREAKS
+
+if complete &>/dev/null; then
+  _twei_completion () {
+    local si="$IFS"
+    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           twei completion -- "${COMP_WORDS[@]}" \
+                           2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  complete -F _twei_completion -o default twei
+elif compctl &>/dev/null; then
+  _twei_completion () {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       twei completion -- "${words[@]}" \
+                       2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  compctl -K _twei_completion -f twei
+fi
+###-end-twei-completion-###
