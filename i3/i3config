@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:WenQuanYi Micro Hei Mono,Icons,FontAwesome,IcoMoon\-Free 10
+font pango:WenQuanYi Micro Hei Mono,Icons,FontAwesome,IcoMoon\-Free,arch 10
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -91,7 +91,8 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 # Workspace names
-workspace "1 " output VGA-0
+Workspace "1" output LVDS
+workspace "1 " output VGA-0
 workspace "2 " output VGA-0
 workspace "3 " output VGA-0
 workspace "4 " output VGA-0
@@ -103,7 +104,7 @@ workspace "F4" output VGA-0
 workspace "F5" output VGA-0
 
 # switch to workspace
-bindsym $mod+1 workspace 1 
+bindsym $mod+1 workspace 1 
 bindsym $mod+2 workspace 2 
 bindsym $mod+3 workspace 3 
 bindsym $mod+4 workspace 4 
@@ -115,7 +116,7 @@ bindsym $mod+F4 workspace F4
 bindsym $mod+F5 workspace F5
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1 
+bindsym $mod+Shift+1 move container to workspace 1 
 bindsym $mod+Shift+2 move container to workspace 2 
 bindsym $mod+Shift+3 move container to workspace 3 
 bindsym $mod+Shift+4 move container to workspace 4 
@@ -193,7 +194,7 @@ bindsym $mod+Shift+minus move scratchpad
 # # 呼出第一个便笺本
 bindsym $mod+minus scratchpad show
 focus_follows_mouse no
-bindsym $mod+Print exec  xfce4-screenshooter
+bindsym $mod+Print exec xfce4-screenshooter
 bindsym $mod+Shift+d exec thunar
 bindsym $mod+p exec xrandr --output VGA-0 --right-of LVDS --mode 1920x1080 --output LVDS --mode 1366x768
 bindsym $mod+Shift+p exec xrandr --output VGA-0 --auto --output LVDS --off
@@ -202,6 +203,7 @@ for_window [class="Google-chrome" title="Google Chrome"] border none
 for_window [title="Oracle VM VirtualBox"] border none
 for_window [class="Opera"] border none
 for_window [class="Do"] border none
+exec --no-startup-id xrandr --output VGA-0 --right-of LVDS --mode 1920x1080 --output LVDS --mode 1366x768
 exec --no-startup-id feh --bg-fill /home/se7en/Pictures/622bc895d143ad4b1396032482025aafa50f06b6.jpg
 exec --no-startup-id fcitx
 exec --no-startup-id compton -b --config ~/.compton.conf
