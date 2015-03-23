@@ -196,7 +196,7 @@ bindsym $mod+minus scratchpad show
 focus_follows_mouse no
 bindsym $mod+Print exec xfce4-screenshooter
 bindsym $mod+Shift+d exec thunar
-bindsym $mod+p exec xrandr --output VGA-0 --right-of LVDS --mode 1920x1080 --output LVDS --mode 1366x768
+bindsym $mod+p exec xrandr --output VGA-0 --off
 bindsym $mod+Shift+p exec xrandr --output VGA-0 --auto --output LVDS --off
 bindsym $mod+7 exec feh --bg-fill /home/se7en/Pictures/622bc895d143ad4b1396032482025aafa50f06b6.jpg
 for_window [class="Google-chrome" title="Google Chrome"] border none
