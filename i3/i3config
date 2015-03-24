@@ -96,36 +96,21 @@ workspace "1 " output VGA-0
 workspace "2 " output VGA-0
 workspace "3 " output VGA-0
 workspace "4 " output VGA-0
-workspace "5" output VGA-0
-workspace "F1 " output VGA-0
-workspace "F2 " output VGA-0
-workspace "F3" output VGA-0
-workspace "F4" output VGA-0
-workspace "F5" output VGA-0
+workspace "F1 " output VGA-0
 
 # switch to workspace
 bindsym $mod+1 workspace 1 
 bindsym $mod+2 workspace 2 
 bindsym $mod+3 workspace 3 
 bindsym $mod+4 workspace 4 
-bindsym $mod+5 workspace 5
-bindsym $mod+F1 workspace F1 
-bindsym $mod+F2 workspace F2 
-bindsym $mod+F3 workspace F3
-bindsym $mod+F4 workspace F4
-bindsym $mod+F5 workspace F5
+bindsym $mod+F1 workspace F1 
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1 
 bindsym $mod+Shift+2 move container to workspace 2 
 bindsym $mod+Shift+3 move container to workspace 3 
 bindsym $mod+Shift+4 move container to workspace 4 
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+F1 move container to workspace F1 
-bindsym $mod+Shift+F2 move container to workspace F2 
-bindsym $mod+Shift+F3 move container to workspace F3
-bindsym $mod+Shift+F4 move container to workspace F4
-bindsym $mod+Shift+F5 move container to workspace F5
+bindsym $mod+Shift+F1 move container to workspace F1 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
