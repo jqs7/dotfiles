@@ -100,6 +100,8 @@ function hugodeploy {
     hugo -t hyde -s ~/MR-SE7EN -d /tmp/hugo
     rsync -az --force --progress -e "ssh" --delete /tmp/hugo root@mr-se7en.com:/usr/share/nginx/html
 }
+# 对调ctrl与caps lock
+setxkbmap -option ctrl:swapcaps
 # Copyright (c) npm, Inc. and Contributors
 # All rights reserved.
 
