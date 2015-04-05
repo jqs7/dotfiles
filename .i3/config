@@ -34,7 +34,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec xfce4-appfinder --disable-server
-bindsym $mod+d exec gnome-do
+exec --no-startup-id rofi -key-run mod4+d -key-window mod4+Tab -key-ssh mod4+shift+s -terminal lilyterm
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -184,7 +184,6 @@ bindsym $mod+Shift+d exec thunar
 bindsym $mod+p exec xrandr --output VGA-0 --off
 bindsym $mod+Shift+p exec xrandr --output VGA-0 --auto --output LVDS --off
 bindsym $mod+7 exec feh --bg-fill /home/se7en/Pictures/622bc895d143ad4b1396032482025aafa50f06b6.jpg
-bindsym $mod+Tab exec quickswitch.py -d "dmenu -i -l 20"
 for_window [class="Google-chrome" title="Google Chrome"] border none
 for_window [title="Oracle VM VirtualBox"] border none
 for_window [class="Opera"] border none
