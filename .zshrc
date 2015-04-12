@@ -80,12 +80,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export GOPATH=~/GOPATH
+export GOPATH=~/.gogets:~/GOPATH
 export GOBIN=~/bin
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin
+export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin:~/.linuxbrew/bin
 export http_proxy=http://127.0.0.1:7777
 export https_proxy=http://127.0.0.1:7777
 alias a='atom -n false'
@@ -100,8 +100,6 @@ function hugodeploy {
     hugo -t hyde -s ~/MR-SE7EN -d /tmp/hugo
     rsync -az --force --progress -e "ssh" --delete /tmp/hugo root@mr-se7en.com:/usr/share/nginx/html
 }
-# 对调ctrl与caps lock
-setxkbmap -option ctrl:swapcaps
 # Copyright (c) npm, Inc. and Contributors
 # All rights reserved.
 

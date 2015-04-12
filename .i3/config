@@ -148,6 +148,7 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3blocks
   strip_workspace_numbers yes
+  tray_output VGA-0
   colors {
 	background #222222
 	statusline #dddddd
@@ -183,10 +184,13 @@ bindsym $mod+p exec xrandr --output VGA-0 --off
 bindsym $mod+Shift+p exec xrandr --output VGA-0 --auto --output LVDS --off
 bindsym $mod+Ctrl+Shift+p exec xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
 exec --no-startup-id xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
-#border
+#window
 for_window [class="Google-chrome" title="Google Chrome"] border none
 for_window [title="Oracle VM VirtualBox"] border none
 for_window [class="Opera"] border none
+for_window [class="fcitx-config-gtk3"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 #wallpaper
 exec --no-startup-id feh --bg-fill /home/se7en/Pictures/5Zub5pyI5piv5L2g55qE6LCO6KiAMTkyMA.jpg
 bindsym $mod+7 exec feh --bg-fill /home/se7en/Pictures/5Zub5pyI5piv5L2g55qE6LCO6KiAMTkyMA.jpg
@@ -196,6 +200,8 @@ exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
+#对调ctrl与caps lock
+exec --no-startup-id setxkbmap -option ctrl:swapcaps
 #others
 bindsym $mod+Print exec xfce4-screenshooter
 bindsym $mod+Shift+d exec thunar
