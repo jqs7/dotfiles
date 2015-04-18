@@ -183,20 +183,30 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 ######################################################################################################################
 #scratchpad
+bindsym $mod+minus       scratchpad show
 bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
 #xrandr
-bindsym $mod+p exec xrandr --output VGA-0 --off
-bindsym $mod+Shift+p exec xrandr --output VGA-0 --auto --output LVDS --off
+bindsym $mod+p            exec xrandr --output VGA-0 --off
+bindsym $mod+Shift+p      exec xrandr --output VGA-0 --auto --output LVDS --off
 bindsym $mod+Ctrl+Shift+p exec xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
 exec --no-startup-id xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
+#cmus
+bindsym $mod+Mod1+c     exec cmus-remote --pause
+bindsym $mod+Mod1+n     exec cmus-remote --next
+bindsym $mod+Mod1+p     exec cmus-remote --prev
+bindsym $mod+Mod1+h     exec cmus-remote --seek -5
+bindsym $mod+Mod1+l     exec cmus-remote --seek +5
+bindsym $mod+Mod1+minus exec cmus-remote --volume -5%
+bindsym $mod+Mod1+equal exec cmus-remote --volume +5%
 #window
-for_window [class="Google-chrome" title="Google Chrome"] border none
+for_window [title="Google Chrome"]        border none
 for_window [title="Oracle VM VirtualBox"] border none
-for_window [class="Opera"] border none
-for_window [class="Osdlyrics"] floating enable
-for_window [class="Fcitx-config-gtk3"] floating enable
-for_window [class="smplayer"] border pixel 3 floating enable
+for_window [class="Opera"]                border none
+for_window [class="Osdlyrics"]            floating enable
+for_window [class="Fcitx-config-gtk3"]    floating enable
+for_window [class="mpv"]                  border pixel 3 floating enable
+for_window [class="bomi"]                 border pixel 3 floating enable
+for_window [class="feh"]                  floating enable
 #wallpaper
 set $wp "/home/se7en/Pictures/5Zub5pyI5piv5L2g55qE6LCO6KiAMTkyMA.jpg"
 exec --no-startup-id feh --bg-fill $wp
@@ -210,7 +220,7 @@ exec --no-startup-id xset s noblank
 #对调ctrl与caps lock
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
 #others
-bindsym $mod+Print exec xfce4-screenshooter
+bindsym $mod+Print   exec xfce4-screenshooter
 bindsym $mod+Shift+d exec thunar
 hide_edge_borders both
 mouse_warping none

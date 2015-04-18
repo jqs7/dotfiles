@@ -88,6 +88,7 @@ export XMODIFIERS=@im=fcitx
 export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin:~/.linuxbrew/bin
 export http_proxy=http://127.0.0.1:7777
 export https_proxy=http://127.0.0.1:7777
+export no_proxy="/var/run/docker.sock"
 alias a='atom -n false'
 alias gd='git diff  --ignore-space-change'
 alias hdg='hexo d -g'
