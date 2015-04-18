@@ -207,6 +207,9 @@ for_window [class="Fcitx-config-gtk3"]    floating enable
 for_window [class="mpv"]                  border pixel 3 floating enable
 for_window [class="bomi"]                 border pixel 3 floating enable
 for_window [class="feh"]                  floating enable
+for_window [class="Firefox"]              border none
+for_window [window_role="Preferences"]    floating enable border normal
+for_window [window_role="Organizer"]    floating enable border normal
 #wallpaper
 set $wp "/home/se7en/Pictures/5Zub5pyI5piv5L2g55qE6LCO6KiAMTkyMA.jpg"
 exec --no-startup-id feh --bg-fill $wp
