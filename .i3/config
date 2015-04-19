@@ -47,9 +47,9 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 
 # move focused window
@@ -131,16 +131,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
+        bindsym h resize shrink width  5 px or 5 ppt
+        bindsym j resize grow   height 5 px or 5 ppt
         bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+        bindsym l resize grow   width  5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Left  resize shrink width  5 px or 5 ppt
+        bindsym Down  resize grow   height 5 px or 5 ppt
+        bindsym Up    resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow   width  5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -158,21 +158,21 @@ bar {
   colors {
 	background #222222
 	statusline #dddddd
-	separator #666666
-	focused_workspace #0088CC #0088CC #ffffff
-	active_workspace #333333 #333333 #888888
+	separator  #666666
+	focused_workspace  #0088CC #0088CC #ffffff
+	active_workspace   #333333 #333333 #888888
 	inactive_workspace #333333 #333333 #888888
-	urgent_workspace   #2f343a #900000 #ffffff
+	urgent_workspace   #2f343a #10e283 #e21a10
   }
 }
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id ~/bin/i3exit lock, mode "default"
-    bindsym e exec --no-startup-id ~/bin/i3exit logout, mode "default"
-    bindsym s exec --no-startup-id ~/bin/i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id ~/bin/i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/bin/i3exit reboot, mode "default"
+    bindsym l       exec --no-startup-id ~/bin/i3exit lock, mode "default"
+    bindsym e       exec --no-startup-id ~/bin/i3exit logout, mode "default"
+    bindsym s       exec --no-startup-id ~/bin/i3exit suspend, mode "default"
+    bindsym h       exec --no-startup-id ~/bin/i3exit hibernate, mode "default"
+    bindsym r       exec --no-startup-id ~/bin/i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id ~/bin/i3exit shutdown, mode "default"
 
     # back to normal: Enter or Escape
@@ -191,35 +191,43 @@ bindsym $mod+Shift+p      exec xrandr --output VGA-0 --auto --output LVDS --off
 bindsym $mod+Ctrl+Shift+p exec xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
 exec --no-startup-id xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
 #cmus
-bindsym $mod+Mod1+c     exec cmus-remote --pause
-bindsym $mod+Mod1+n     exec cmus-remote --next
-bindsym $mod+Mod1+p     exec cmus-remote --prev
-bindsym $mod+Mod1+h     exec cmus-remote --seek -5
-bindsym $mod+Mod1+l     exec cmus-remote --seek +5
-bindsym $mod+Mod1+minus exec cmus-remote --volume -5%
-bindsym $mod+Mod1+equal exec cmus-remote --volume +5%
+set $mode_cmus Cmus (c) pause, (n) next, (p) prev, (h) -5s, (l) +5s, (-) vol-, (=) vol+
+mode "$mode_cmus" {
+    bindsym c      exec cmus-remote --pause, mode "default"
+    bindsym n      exec cmus-remote --next
+    bindsym p      exec cmus-remote --prev
+    bindsym h      exec cmus-remote --seek -5
+    bindsym l      exec cmus-remote --seek +5
+    bindsym minus  exec cmus-remote --volume -5%
+    bindsym equal  exec cmus-remote --volume +5%
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+m mode "$mode_cmus"
+
 #window
 for_window [title="Google Chrome"]        border none
 for_window [title="Oracle VM VirtualBox"] border none
 for_window [class="Opera"]                border none
-for_window [class="Osdlyrics"]            floating enable
-for_window [class="Fcitx-config-gtk3"]    floating enable
+for_window [class="Firefox"]              border none
 for_window [class="mpv"]                  border pixel 3 floating enable
 for_window [class="bomi"]                 border pixel 3 floating enable
+for_window [class="Osdlyrics"]            floating enable
+for_window [class="Fcitx-config-gtk3"]    floating enable
 for_window [class="feh"]                  floating enable
-for_window [class="Firefox"]              border none
 for_window [window_role="Preferences"]    floating enable border normal
-for_window [window_role="Organizer"]    floating enable border normal
-#wallpaper
-set $wp "/home/se7en/Pictures/5Zub5pyI5piv5L2g55qE6LCO6KiAMTkyMA.jpg"
-exec --no-startup-id feh --bg-fill $wp
-bindsym $mod+7 exec feh --bg-fill $wp
+for_window [window_role="Organizer"]      floating enable border normal
+for_window [window_role="settings"]       floating enable border normal
 #autostart
 exec --no-startup-id fcitx
 exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
+#wallpaper
+set $wp "/home/se7en/Pictures/5Zub5pyI5piv5L2g55qE6LCO6KiAMTkyMA.jpg"
+exec --no-startup-id feh --bg-fill $wp
+bindsym $mod+7 exec feh --bg-fill $wp
 #对调ctrl与caps lock
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
 #others
