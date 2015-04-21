@@ -191,15 +191,13 @@ bindsym $mod+Shift+p      exec xrandr --output VGA-0 --auto --output LVDS --off
 bindsym $mod+Ctrl+Shift+p exec xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
 exec --no-startup-id xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
 #cmus
-set $mode_cmus Cmus (c) pause, (n) next, (p) prev, (h) -5s, (l) +5s, (-) vol-, (=) vol+
+set $mode_cmus Cmus (c) pause, (n) next, (p) prev, (h) -5s, (l) +5s
 mode "$mode_cmus" {
     bindsym c      exec cmus-remote --pause, mode "default"
     bindsym n      exec cmus-remote --next
     bindsym p      exec cmus-remote --prev
     bindsym h      exec cmus-remote --seek -5
     bindsym l      exec cmus-remote --seek +5
-    bindsym minus  exec cmus-remote --volume -5%
-    bindsym equal  exec cmus-remote --volume +5%
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
