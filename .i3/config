@@ -208,6 +208,7 @@ for_window [title="Google Chrome"]        border none
 for_window [title="Oracle VM VirtualBox"] border none
 for_window [class="Opera"]                border none
 for_window [class="Firefox"]              border none
+for_window [class="Youdao Dict"]          border none floating enable
 for_window [class="mpv"]                  border pixel 3 floating enable
 for_window [class="bomi"]                 border pixel 3 floating enable
 for_window [class="Osdlyrics"]            floating enable
