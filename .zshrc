@@ -85,22 +85,20 @@ export GOBIN=~/bin
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:$GOPATH/bin:~/.linuxbrew/bin
+export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:~/.linuxbrew/bin
 export http_proxy=http://127.0.0.1:7777
 export https_proxy=http://127.0.0.1:7777
 export no_proxy="/var/run/docker.sock"
+export VBOX_USB=usbfs
 alias a='atom -n false'
+alias s='subl3 -a'
+alias ssh='mosh'
 alias gd='git diff  --ignore-space-change'
 alias hdg='hexo d -g'
-alias md='haroopad'
 alias adl='aria2c'
 alias adlrpc='aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all'
-export VBOX_USB=usbfs
-function hugodeploy {
-    rm -rf /tmp/hugo
-    hugo -t hyde -s ~/MR-SE7EN -d /tmp/hugo
-    rsync -az --force --progress -e "ssh" --delete /tmp/hugo root@mr-se7en.com:/usr/share/nginx/html
-}
+alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
+
 # Copyright (c) npm, Inc. and Contributors
 # All rights reserved.
 
