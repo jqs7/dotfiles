@@ -176,11 +176,13 @@ bindsym $mod+Shift+e mode "$mode_system"
 #scratchpad
 bindsym $mod+minus       scratchpad show
 bindsym $mod+Shift+minus move scratchpad
+
 #xrandr
 bindsym $mod+p            exec xrandr --output VGA-0 --off
 bindsym $mod+Shift+p      exec xrandr --output VGA-0 --auto --output LVDS --off
 bindsym $mod+Ctrl+Shift+p exec xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
 exec --no-startup-id xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
+
 #cmus
 set $mode_cmus Cmus (c) pause, (n) next, (p) prev, (h) -5s, (l) +5s
 mode "$mode_cmus" {
@@ -210,18 +212,19 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
 exec --no-startup-id google-chrome-stable --no-startup-window
-#exec --no-startup-id rofi -key-run mod4+d -key-window mod4+Tab -key-ssh mod4+shift+s -terminal lilyterm -opacity "87" -width 27 -fg-active "#fffa84" $(/home/se7en/bin/i3-color-rofi)
 exec --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -terminal lilyterm -opacity 87 -width 27 -fg-active "#fffa84" $(~/bin/i3-color-rofi)
+
 #wallpaper
 set $wp "/home/se7en/Pictures/5Zub5pyI5piv5L2g55qE6LCO6KiAMTkyMA.jpg"
 exec --no-startup-id feh --bg-fill $wp
 bindsym $mod+7  exec feh --bg-fill $wp
+
 #对调ctrl与caps lock
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
+
 #others
 bindsym $mod+Print   exec proxychains xfce4-screenshooter
 bindsym $mod+Shift+d exec thunar
-hide_edge_borders both
 mouse_warping none
 focus_follows_mouse no
 ######################################################################################################################
