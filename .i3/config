@@ -51,9 +51,9 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
@@ -159,12 +159,12 @@ bar {
 }
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l       exec --no-startup-id ~/bin/i3exit lock, mode "default"
-    bindsym e       exec --no-startup-id ~/bin/i3exit logout, mode "default"
-    bindsym s       exec --no-startup-id ~/bin/i3exit suspend, mode "default"
+    bindsym l       exec --no-startup-id ~/bin/i3exit lock,      mode "default"
+    bindsym e       exec --no-startup-id ~/bin/i3exit logout,    mode "default"
+    bindsym s       exec --no-startup-id ~/bin/i3exit suspend,   mode "default"
     bindsym h       exec --no-startup-id ~/bin/i3exit hibernate, mode "default"
-    bindsym r       exec --no-startup-id ~/bin/i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id ~/bin/i3exit shutdown, mode "default"
+    bindsym r       exec --no-startup-id ~/bin/i3exit reboot,    mode "default"
+    bindsym Shift+s exec --no-startup-id ~/bin/i3exit shutdown,  mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
