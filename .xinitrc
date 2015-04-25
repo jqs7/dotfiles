@@ -13,6 +13,7 @@ fi
 
 # exec openbox-session
 exec i3
+# exec cinnamon-session
 # exec startdde
 # exec gnome-session
 # exec startkde
