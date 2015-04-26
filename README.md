@@ -1,4 +1,4 @@
-###Applications
+##Applications
 - i3 - window manager  
 - i3block - status viewer  
 - rofi - window switch & app finder  
