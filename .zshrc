@@ -46,7 +46,8 @@ ZSH_THEME="7"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux sudo systemd encode64 autojump pass t vagrant)
+plugins=(git archlinux sudo systemd encode64 autojump pass t vagrant tmux colored-man
+        colorize extract rsync emoji-clock themes atom nyan sublime)
 
 # User configuration
 
@@ -90,8 +91,6 @@ export http_proxy=http://127.0.0.1:7777
 export https_proxy=http://127.0.0.1:7777
 export no_proxy="/var/run/docker.sock"
 export VBOX_USB=usbfs
-alias a='atom -n false'
-alias s='subl3 -a'
 alias ssh='mosh'
 alias gd='git diff  --ignore-space-change'
 alias hdg='hexo d -g'
