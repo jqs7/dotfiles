@@ -172,7 +172,7 @@ mode "$mode_system" {
 }
 bindsym $mod+Shift+e mode "$mode_system"
 
-######################################################################################################################
+############################################################################################################
 #scratchpad
 bindsym $mod+minus       scratchpad show
 bindsym $mod+Shift+minus move scratchpad
@@ -199,12 +199,10 @@ bindsym $mod+Shift+m mode "$mode_cmus"
 #window
 for_window [class="Opera|Firefox|chrome|V*Box"]         border none
 for_window [class="Youdao|Steam"]                       border none floating enable
-for_window [class="mplayer|mpv|bomi|dota"]              border pixel 3 floating enable
+for_window [class="mplayer|mpv|bomi|dota|vim"]          border pixel 3 floating enable
 for_window [class="Thunar|feh|lyrics|config|Ristretto"] floating enable
 
 #autostart
-exec --no-startup-id export http_proxy="127.0.0.1:7777"
-exec --no-startup-id export https_proxy="127.0.0.1:7777"
 exec --no-startup-id fcitx
 exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id thunar --daemon &
@@ -215,7 +213,7 @@ exec --no-startup-id google-chrome-stable --no-startup-window
 exec --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -terminal lilyterm -opacity 87 -width 27 -fg-active "#fffa84" $(~/bin/i3-color-rofi)
 
 #wallpaper
-set $wp "/home/se7en/Pictures/5Zub5pyI5piv5L2g55qE6LCO6KiAMTkyMA.jpg"
+set $wp "/home/se7en/Pictures/wallhaven-177471.jpg"
 exec --no-startup-id feh --bg-fill $wp
 bindsym $mod+7  exec feh --bg-fill $wp
 
@@ -223,11 +221,11 @@ bindsym $mod+7  exec feh --bg-fill $wp
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
 
 #others
-bindsym $mod+Print   exec proxychains xfce4-screenshooter
+bindsym $mod+Print   exec xfce4-screenshooter
 bindsym $mod+Shift+d exec thunar
 mouse_warping none
 focus_follows_mouse no
-######################################################################################################################
+############################################################################################################
 
 # class                 border  backgr. text    indicator
 client.focused          #0088CC #0088CC #ffffff #dddddd
