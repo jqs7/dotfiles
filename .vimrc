@@ -330,6 +330,7 @@ set number
 set t_Co=256
 set nocompatible
 set helplang=cn
+set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
@@ -349,6 +350,7 @@ call vundle#begin()
     Plugin 'vim-auto-save'
     Plugin 'itchyny/lightline.vim'
     Plugin 'suan/vim-instant-markdown'
+    Plugin 'tpope/vim-fugitive'
 call vundle#end()
 color dracula
 let g:dracula_italic = 1
@@ -359,7 +361,25 @@ let g:ctrlp_show_hidden = 1
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
-let g:lightline = { 'colorscheme': 'Tomorrow_Night' }
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
 nnoremap <F1> :exe 'NERDTreeToggle'<cr>
 nnoremap <F2> :set invnumber<CR>
 nnoremap <leader>q :q<cr>

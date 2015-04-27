@@ -11,7 +11,7 @@ export UPDATE_ZSH_DAYS=1
 
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git archlinux sudo systemd encode64 autojump pass t vagrant tmux colored-man colorize extract rsync emoji-clock themes)
+plugins=(git archlinux sudo systemd encode64 autojump pass t vagrant colored-man colorize extract rsync emoji-clock themes)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
@@ -32,6 +32,7 @@ alias hdg='hexo d -g'
 alias adl='aria2c'
 alias adlrpc='aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all'
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
+alias tmux="TERM=screen-256color tmux -2"
 
 ###-begin-twei-completion-###
 ### credits to npm, this file is coming directly from isaacs/npm repo
