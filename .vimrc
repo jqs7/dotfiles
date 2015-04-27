@@ -39,7 +39,6 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -64,7 +63,6 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -139,7 +137,6 @@ set tm=500
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -164,7 +161,6 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -172,7 +168,6 @@ set ffs=unix,dos,mac
 set nobackup
 set nowb
 set noswapfile
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -195,7 +190,6 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
@@ -203,7 +197,6 @@ set wrap "Wrap lines
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
@@ -265,7 +258,6 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
-
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
@@ -274,7 +266,6 @@ set laststatus=2
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -303,7 +294,6 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ack searching and cope displaying
@@ -334,7 +324,6 @@ map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -347,23 +336,14 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
-
-" Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
-
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
-
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -429,8 +409,6 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MySettings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap <F1> <Esc>"
-nnoremap <F2> :set invnumber<CR>
 set cursorcolumn
 set cursorline
 set number
@@ -438,20 +416,20 @@ set t_Co=256
 set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'fcitx.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'molokai'
-Plugin 'phd'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'yonchu/accelerated-smooth-scroll'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'asins/vimcdoc'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'fatih/vim-go'
+    Plugin 'gmarik/Vundle.vim'
+    Plugin 'fcitx.vim'
+    Plugin 'Valloric/YouCompleteMe'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'molokai'
+    Plugin 'phd'
+    Plugin 'terryma/vim-multiple-cursors'
+    Plugin 'yonchu/accelerated-smooth-scroll'
+    Plugin 'Lokaltog/vim-powerline'
+    Plugin 'nathanaelkane/vim-indent-guides'
+    Plugin 'asins/vimcdoc'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'fatih/vim-go'
 call vundle#end()
 color phd
 let g:indent_guides_enable_on_vim_startup=1
@@ -459,4 +437,6 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 set helplang=cn
 nnoremap <F1> :exe 'NERDTreeToggle'<cr>
+nnoremap <F2> :set invnumber<CR>
 let g:ctrlp_show_hidden = 1
+nmap <leader>q :wq<cr>

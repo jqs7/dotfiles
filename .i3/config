@@ -157,15 +157,15 @@ bar {
 	urgent_workspace   #2f343a #10e283 #e21a10
   }
 }
+set $Locker i3lock -d && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l       exec --no-startup-id ~/bin/i3exit lock,      mode "default"
-    bindsym e       exec --no-startup-id ~/bin/i3exit logout,    mode "default"
-    bindsym s       exec --no-startup-id ~/bin/i3exit suspend,   mode "default"
-    bindsym h       exec --no-startup-id ~/bin/i3exit hibernate, mode "default"
-    bindsym r       exec --no-startup-id ~/bin/i3exit reboot,    mode "default"
-    bindsym Shift+s exec --no-startup-id ~/bin/i3exit shutdown,  mode "default"
-
+    bindsym e       exec --no-startup-id i3-msg exit,                    mode "default"
+    bindsym l       exec --no-startup-id $Locker,                        mode "default"
+    bindsym s       exec --no-startup-id $Locker && systemctl suspend,   mode "default"
+    bindsym h       exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r       exec --no-startup-id systemctl reboot,               mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i,          mode "default"  
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -213,7 +213,7 @@ exec --no-startup-id google-chrome-stable --no-startup-window
 exec --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -terminal lilyterm -opacity 87 -width 27 -fg-active "#fffa84" $(~/bin/i3-color-rofi)
 
 #wallpaper
-set $wp "/home/se7en/Pictures/wallhaven-177471.jpg"
+set $wp "/home/se7en/Pictures/wallhaven-9766.jpg"
 exec --no-startup-id feh --bg-fill $wp
 bindsym $mod+7  exec feh --bg-fill $wp
 
