@@ -11,8 +11,7 @@ export UPDATE_ZSH_DAYS=1
 
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git archlinux sudo systemd encode64 autojump pass t vagrant tmux colored-man
-        colorize extract rsync emoji-clock themes atom nyan sublime)
+plugins=(git archlinux sudo systemd encode64 autojump pass t vagrant tmux colored-man colorize extract rsync emoji-clock themes)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
