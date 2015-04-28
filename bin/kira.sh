@@ -64,4 +64,4 @@ KIRA=(
     "( *・ω・)✄╰ひ╯"
 )
 
-echo ${KIRA[$[$RANDOM % ${#KIRA[@]}]]};
+echo ${KIRA[$[$RANDOM % ${#KIRA[@]}]+1]};

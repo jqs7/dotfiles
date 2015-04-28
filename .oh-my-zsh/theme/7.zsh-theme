@@ -241,4 +241,4 @@ KIRA=(
     "( *・ω・)✄╰ひ╯"
 )
 
-RPROMPT='%F{black}%f%K{black} %F{blue}$KIRA[$[$RANDOM %${#KIRA[@]}]]%f %F{green}%f%k%K{green} %F{black}%* %f%k'
+RPROMPT='%F{black}%f%K{black} %F{blue}$KIRA[$[$RANDOM %${#KIRA[@]}]+1]%f %F{green}%f%k%K{green} %F{black}%* %f%k'
