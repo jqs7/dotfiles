@@ -17,7 +17,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nmap <leader>w :w!<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -164,8 +164,8 @@ map k gk
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+" Disable highlight when <leader><CR> is pressed
+map <silent> <leader><CR> :noh<cr>
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -173,16 +173,13 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Close the current buffer
-map <leader>bd :Bclose<cr>
-
 " Close all the buffers
-map <leader>ba :1,1000 bd!<cr>
+map <leader>ba :1,1000 bd!<CR>
 
 " Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
+map <leader>tn :tabnew<CR>
+map <leader>to :tabonly<CR>
+map <leader>tc :tabclose<CR>
 map <leader>tm :tabmove
 map <leader>t<leader> gt
 
@@ -194,10 +191,10 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+map <leader>te :tabedit <c-r>=expand("%:p:h")<CR>/
 
 " Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
+map <leader>cd :cd %:p:h<CR>:pwd<cr>
 
 " Specify the behavior when switching between buffers
 try
@@ -242,10 +239,10 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+noremap <Leader>m mmHmt:%s/<C-V><CR>//ge<cr>'tzt'm
 
 " Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
+map <leader>pp :setlocal paste!<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -335,40 +332,47 @@ call vundle#begin()
     Plugin 'crusoexia/vim-dracula'
     Plugin 'PotatoesMaster/i3-vim-syntax'
     Plugin 'vim-auto-save'
-    Plugin 'itchyny/lightline.vim'
     Plugin 'suan/vim-instant-markdown'
     Plugin 'tpope/vim-fugitive'
-    Plugin 'jqs7n/lightline-7.vim'
+    Plugin 'bling/vim-airline'
+    Plugin 'jiangmiao/auto-pairs'
+    Plugin 'tpope/vim-surround'
+    Plugin 'bling/vim-bufferline'
 call vundle#end()
+
 color dracula
 let g:dracula_italic = 1
+
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
+
 let g:ctrlp_show_hidden = 1
+
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
-let g:lightline = {
-      \ 'colorscheme': '7',
-      \ 'active': {
-      \   'left': [ [ 'logo', 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'logo': ' ',
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
-nnoremap <F1> :exe 'NERDTreeToggle'<cr>
-nnoremap <F2> :set invnumber<CR>
-nnoremap <leader>q :q<cr>
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_section_a = airline#section#create([" ","mode"])
+let g:airline_theme='bubblegum'
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(mp3|jpg|png|gif)$',
+  \}
+
+"恢复Alt键功能
+set ttimeoutlen=1
+for UseAlt in range (65 , 90 ) + range ( 97 , 122)
+    exe "set <M-" .nr2char(UseAlt).">=\<Esc>" .nr2char (UseAlt)
+endfor
+
+map  <M-w>         :Bclose<CR>
+map  <M-h>         :bp<CR>
+map  <M-l>         :bn<CR>
+nmap <F1>          :exe 'NERDTreeToggle'<CR>
+nmap <F2>          :set invnumber<CR>
+nmap <leader>q     :close<CR>
+nmap <leader><M-q> :q<CR>

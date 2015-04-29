@@ -220,7 +220,7 @@ exec --no-startup-id feh --bg-fill $wp
 bindsym $mod+7  exec feh --bg-fill $wp
 
 #对调ctrl与caps lock
-exec --no-startup-id setxkbmap -option ctrl:swapcaps
+#exec --no-startup-id setxkbmap -option ctrl:swapcaps
 
 #others
 bindsym $mod+Print   exec xfce4-screenshooter
