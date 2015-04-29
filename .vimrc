@@ -16,8 +16,6 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
-" Fast saving
-nmap <leader>w :w!<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -338,30 +336,38 @@ call vundle#begin()
     Plugin 'jiangmiao/auto-pairs'
     Plugin 'tpope/vim-surround'
     Plugin 'bling/vim-bufferline'
+    Plugin 'godlygeek/tabular'
+    Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 
+"dracula settings
 color dracula
 let g:dracula_italic = 1
 
+"缩进提示
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
+"ctrlp显示隐藏文件
 let g:ctrlp_show_hidden = 1
-
-let g:auto_save = 1
-let g:auto_save_in_insert_mode = 0
-let g:auto_save_silent = 1
-
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-"let g:airline_section_a = airline#section#create([" ","mode"])
-let g:airline_theme='bubblegum'
-
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(mp3|jpg|png|gif)$',
   \}
+
+"自动保存设置
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+let g:auto_save_silent = 1
+
+"airline设置
+let g:airline_powerline_fonts = 1
+"let g:airline_section_a = airline#section#create([" ","mode"])
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='bubblegum'
+
+let g:bufferline_echo = 0
 
 "恢复Alt键功能
 set ttimeoutlen=1
@@ -369,10 +375,11 @@ for UseAlt in range (65 , 90 ) + range ( 97 , 122)
     exe "set <M-" .nr2char(UseAlt).">=\<Esc>" .nr2char (UseAlt)
 endfor
 
+"按键映射
 map  <M-w>         :Bclose<CR>
 map  <M-h>         :bp<CR>
 map  <M-l>         :bn<CR>
 nmap <F1>          :exe 'NERDTreeToggle'<CR>
 nmap <F2>          :set invnumber<CR>
 nmap <leader>q     :close<CR>
-nmap <leader><M-q> :q<CR>
+nmap <leader>qq    :q<CR>

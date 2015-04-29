@@ -1,0 +1,27 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  inactive_color_offset = 1.0
+[keybindings]
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#4b4444:#e04848:#658e3f:#c4a000:#6592ce:#844e8c:#4da1a2:#d6e7c6:#6d6d6d:#fc6262:#afe974:#ecd85d:#569eea:#e372d2:#5db2b2:#d6d6d6"
+    background_image = None
+    background_darkness = 0.9
+    use_system_font = False
+    cursor_color = "#909090"
+    foreground_color = "#b5c7ce"
+    show_titlebar = False
+    font = Source Code Pro for Powerline 10
+    background_color = "#272727"
+    cursor_blink = False
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

@@ -27,7 +27,7 @@ font pango:WenQuanYi Micro Hei Mono,Icons,FontAwesome,IcoMoon\-Free,arch 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec lilyterm
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -212,7 +212,7 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
 exec --no-startup-id google-chrome-stable --no-startup-window
-exec --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -terminal lilyterm -opacity 87 -width 27 -fg-active "#fffa84" $(~/bin/i3-color-rofi)
+exec --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -terminal terminator -opacity 87 -width 27 -fg-active "#fffa84" $(~/bin/i3-color-rofi)
 
 #wallpaper
 set $wp "/home/se7en/Pictures/wallhaven-9766.jpg"

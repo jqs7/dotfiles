@@ -248,8 +248,12 @@ keycode 254 =
 keycode 255 =
 
 clear          lock 
-clear          control
+clear          control 
 add control =  Caps_Lock
+!esc to caps
 keycode   9 =  Caps_Lock NoSymbol Caps_Lock
+!caps to ctrl
 keycode  66 =  Control_L NoSymbol Control_L
+!esc to caps
 keycode  37 =  Escape NoSymbol Escape
+keycode 134 =  Escape NoSymbol Escape
