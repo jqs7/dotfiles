@@ -1,5 +1,5 @@
 [global_config]
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  enabled_plugins = InactivityWatch, TestPlugin, LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
   inactive_color_offset = 1.0
 [keybindings]
 [profiles]
@@ -11,7 +11,9 @@
     use_system_font = False
     cursor_color = "#909090"
     foreground_color = "#b5c7ce"
+    use_custom_command = True
     show_titlebar = False
+    custom_command = tmux a||Term=screen-256 tmux -2
     font = Source Code Pro for Powerline 10
     background_color = "#272727"
     cursor_blink = False
