@@ -1,22 +1,26 @@
 [global_config]
-  enabled_plugins = InactivityWatch, TestPlugin, LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
+  custom_url_handler = google-chrome-stable
+  title_hide_sizetext = True
+  dbus = True
+  use_custom_url_handler = True
+  enabled_plugins = InactivityWatch, TestPlugin, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
+  tab_position = bottom
   inactive_color_offset = 1.0
 [keybindings]
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#4b4444:#e04848:#658e3f:#c4a000:#6592ce:#844e8c:#4da1a2:#d6e7c6:#6d6d6d:#fc6262:#afe974:#ecd85d:#569eea:#e372d2:#5db2b2:#d6d6d6"
+    palette = "#444444:#e84848:#658e3e:#c4a000:#5692cc:#844e8e:#4da1a1:#d7e7c7:#6d6d6d:#fc6262:#afe777:#ecd85d:#569eee:#e372dd:#5db2b2:#d6d6d6"
     background_image = None
     background_darkness = 0.9
     use_system_font = False
-    cursor_color = "#909090"
+    cursor_color = "#444444"
     foreground_color = "#b5c7ce"
     use_custom_command = True
     show_titlebar = False
-    custom_command = tmux a||Term=screen-256 tmux -2
+    custom_command = Term=screen-256 tmux -2 a || Term=screen-256 tmux -2
     font = Source Code Pro for Powerline 10
     background_color = "#272727"
-    cursor_blink = False
     scrollback_infinite = True
 [layouts]
   [[default]]

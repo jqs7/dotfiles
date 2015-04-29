@@ -16,7 +16,6 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -338,11 +337,15 @@ call vundle#begin()
     Plugin 'bling/vim-bufferline'
     Plugin 'godlygeek/tabular'
     Plugin 'plasticboy/vim-markdown'
+    Plugin 'junegunn/goyo.vim'
 call vundle#end()
 
 "dracula settings
 color dracula
 let g:dracula_italic = 1
+
+"nerdtree
+let NERDTreeHighlightCursorline=1
 
 "缩进提示
 let g:indent_guides_enable_on_vim_startup=1
@@ -351,10 +354,14 @@ let g:indent_guides_guide_size=1
 
 "ctrlp显示隐藏文件
 let g:ctrlp_show_hidden = 1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(mp3|jpg|png|gif)$',
   \}
+
+"YCM
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "自动保存设置
 let g:auto_save = 1
@@ -367,6 +374,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='bubblegum'
 
+"bufferline
 let g:bufferline_echo = 0
 
 "恢复Alt键功能

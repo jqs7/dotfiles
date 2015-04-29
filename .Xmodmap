@@ -247,13 +247,24 @@ keycode 253 =
 keycode 254 =
 keycode 255 =
 
-clear          lock 
-clear          control 
-add control =  Caps_Lock
-!esc to caps
-keycode   9 =  Caps_Lock NoSymbol Caps_Lock
-!caps to ctrl
-keycode  66 =  Control_L NoSymbol Control_L
-!esc to caps
-keycode  37 =  Escape NoSymbol Escape
-keycode 134 =  Escape NoSymbol Escape
+!------before------
+!   9 -- esc
+!  66 -- caps
+!  37 -- ctrl_L
+! 134 -- super_R
+!  49 -- grave
+!------------------
+clear         lock 
+clear         control 
+add control = Caps_Lock
+keycode   9 = Caps_Lock NoSymbol Caps_Lock
+keycode  66 = Control_L NoSymbol Control_L
+keycode  37 = grave asciitilde grave asciitilde
+keycode 134 = Escape NoSymbol Escape
+keycode  49 = Escape NoSymbol Escape
+!--------after--------
+!     esc -> caps
+!    caps -> ctrl_L
+! super_R -> esc
+!   grave -> esc
+!---------------------
