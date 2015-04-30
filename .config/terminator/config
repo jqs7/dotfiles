@@ -9,7 +9,7 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#444444:#e84848:#658e3e:#c4a000:#5692cc:#844e8e:#4da1a1:#d7e7c7:#6d6d6d:#fc6262:#afe777:#ecd85d:#569eee:#e372dd:#5db2b2:#d6d6d6"
+    palette = "#444444:#e84848:#68a727:#c4a000:#5692cc:#844e8e:#4da1a1:#d7e7c7:#6d6d6d:#fc6262:#afe777:#ecd85d:#569eee:#e372dd:#5db2b2:#d6d6d6"
     background_image = None
     background_darkness = 0.9
     use_system_font = False
