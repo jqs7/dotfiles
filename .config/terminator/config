@@ -16,6 +16,7 @@
     cursor_color = "#004747"
     foreground_color = "#b7c7c7"
     use_custom_command = True
+    update_records = False
     show_titlebar = False
     custom_command = Term=screen-256 tmux -2 a || Term=screen-256 tmux -2
     font = Source Code Pro for Powerline 10
