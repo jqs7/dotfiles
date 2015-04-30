@@ -315,11 +315,9 @@ set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
-    Plugin 'L9'
     Plugin 'fcitx.vim'
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'terryma/vim-multiple-cursors'
-    Plugin 'yonchu/accelerated-smooth-scroll'
     Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'asins/vimcdoc'
     Plugin 'scrooloose/nerdtree'
