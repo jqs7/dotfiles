@@ -208,9 +208,6 @@ for_window [title="Preferences"]                        floating enable
 exec --no-startup-id fcitx
 exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id thunar --daemon &
-exec --no-startup-id xset s off
-exec --no-startup-id xset -dpms
-exec --no-startup-id xset s noblank
 exec --no-startup-id google-chrome-stable --no-startup-window
 exec --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -terminal terminator -opacity 87 -width 27 -fg-active "#fff333" $(~/bin/i3-color-rofi)
 
