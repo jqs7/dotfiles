@@ -318,7 +318,6 @@ call vundle#begin()
     Plugin 'fcitx.vim'
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'terryma/vim-multiple-cursors'
-    Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'asins/vimcdoc'
     Plugin 'scrooloose/nerdtree'
     Plugin 'kien/ctrlp.vim'
@@ -336,6 +335,7 @@ call vundle#begin()
     Plugin 'godlygeek/tabular'
     Plugin 'plasticboy/vim-markdown'
     Plugin 'junegunn/goyo.vim'
+    Plugin 'dyng/ctrlsf.vim'
 call vundle#end()
 
 "dracula settings
@@ -345,11 +345,6 @@ let g:dracula_italic = 1
 "nerdtree
 let NERDTreeHighlightCursorline=1
 
-"缩进提示
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-
 "ctrlp显示隐藏文件
 let g:ctrlp_show_hidden = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
@@ -358,8 +353,16 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(mp3|jpg|png|gif)$',
   \}
 
-"YCM
+"complete
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"go-vim
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 "自动保存设置
 let g:auto_save = 1
