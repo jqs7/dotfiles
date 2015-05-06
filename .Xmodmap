@@ -267,14 +267,18 @@ keycode  49 = Escape NoSymbol Escape
 keycode  66 = Control_L NoSymbol Control_L
 keycode 134 = Mode_switch NoSymbol Mode_switch
 
+keycode  13 = 4 dollar End dollar
+keycode  19 = 0 parenright Home parenright
+keycode  33 = p P Prior P
 keycode  43 = h H Left  H
 keycode  44 = j J Down  J
 keycode  45 = k K Up    K
 keycode  46 = l L Right L
+keycode  57 = n N Next  N
 !----------after----------
 !       esc -> caps
 !      caps -> ctrl_L
-!   super_R -> backspace
+!   super_R -> mode_switch
 !     grave -> esc
 ! backspace -> grave
 !    ctrl_L -> mode_switch

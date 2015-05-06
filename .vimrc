@@ -302,6 +302,17 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
+
+function! HideNumber()
+  if(&relativenumber == &number)
+    set relativenumber! number!
+  elseif(&number)
+    set number!
+  else
+    set relativenumber!
+  endif
+  set number?
+endfunc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MySettings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -312,6 +323,7 @@ set t_Co=256
 set nocompatible
 set helplang=cn
 set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
+set relativenumber
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
@@ -335,7 +347,7 @@ call vundle#begin()
     Plugin 'godlygeek/tabular'
     Plugin 'plasticboy/vim-markdown'
     Plugin 'junegunn/goyo.vim'
-    Plugin 'dyng/ctrlsf.vim'
+    Plugin 'majutsushi/tagbar'
 call vundle#end()
 
 "dracula settings
@@ -389,6 +401,7 @@ map  <M-w>         :Bclose<CR>
 map  <M-h>         :bp<CR>
 map  <M-l>         :bn<CR>
 nmap <F1>          :exe 'NERDTreeToggle'<CR>
-nmap <F2>          :set invnumber<CR>
+nmap <F2>          :call HideNumber()<CR>
+nmap <F3>          :TagbarToggle<CR>
 nmap <leader>q     :close<CR>
 nmap <leader>qq    :q<CR>

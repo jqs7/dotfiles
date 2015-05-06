@@ -11,7 +11,7 @@ export UPDATE_ZSH_DAYS=1
 
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git archlinux sudo systemd encode64 autojump pass t vagrant colored-man colorize extract rsync emoji-clock)
+plugins=(git archlinux sudo systemd encode64 z t pass vagrant colored-man extract rsync)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
@@ -32,7 +32,6 @@ alias hdg='hexo d -g'
 alias adl='aria2c'
 alias adlrpc='aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all'
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
-alias tmux="TERM=screen-256color tmux -2"
 
 ###-begin-twei-completion-###
 ### credits to npm, this file is coming directly from isaacs/npm repo
@@ -79,8 +78,16 @@ elif compctl &>/dev/null; then
 fi
 ###-end-twei-completion-###
 
+# Setup zsh-autosuggestions
+source /home/se7en/.zsh-autosuggestions/autosuggestions.zsh
 
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
 
-source "$HOME/.antigen/antigen.zsh"
+zle -N zle-line-init
 
-antigen-apply
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle

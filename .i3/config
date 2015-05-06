@@ -210,7 +210,7 @@ exec --no-startup-id fcitx
 exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id thunar --daemon &
 exec --no-startup-id google-chrome-stable --no-startup-window
-exec --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -font "wenquanyi micro hei mono" -terminal $term -opacity 87 -width 27 -padding 11 -fg-active "#fff333" $(~/bin/i3-color-rofi)
+exec --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -font "wenquanyi micro hei mono" -terminal $term -opacity 87 -width 27 -padding 11 -fg-active "#fff333" $(~/bin/i3-color-rofi)
 
 #wallpaper
 set $wp "/home/se7en/Pictures/wallhaven-9766.jpg"
@@ -223,6 +223,7 @@ bindsym $mod+7  exec feh --bg-fill $wp
 #others
 bindsym $mod+Print   exec xfce4-screenshooter
 bindsym $mod+Shift+d exec thunar
+hide_edge_borders vertical
 mouse_warping none
 focus_follows_mouse no
 ############################################################################################################
