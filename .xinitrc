@@ -18,6 +18,8 @@ fi
 # exec openbox-session
 # exec awesome
 exec i3
+# 2bwm &
+# exec terminator
 # exec xmonad
 # exec cinnamon-session
 # exec startdde

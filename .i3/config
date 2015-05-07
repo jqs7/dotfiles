@@ -83,33 +83,34 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+c focus child
 
-set $w1 "1:"
-set $w2 "2:"
-set $w3 "3:"
-set $w4 "4:"
-set $w5 "5:"
+set $w01 "1:"
+set $w11 "1:"
+set $w12 "2:"
+set $w13 "3:"
+set $w14 "4:"
+set $w15 "5:"
 
 # Workspace names
-Workspace "1" output LVDS
-workspace $w1 output VGA-0
-workspace $w2 output VGA-0
-workspace $w3 output VGA-0
-workspace $w4 output VGA-0
-workspace $w5 output VGA-0
+Workspace $w01 output LVDS
+workspace $w11 output VGA-0
+workspace $w12 output VGA-0
+workspace $w13 output VGA-0
+workspace $w14 output VGA-0
+workspace $w15 output VGA-0
 
 # switch to workspace
-bindsym $mod+1  workspace $w1
-bindsym $mod+2  workspace $w2
-bindsym $mod+3  workspace $w3
-bindsym $mod+4  workspace $w4
-bindsym $mod+F1 workspace $w5
+bindsym $mod+1  workspace $w11
+bindsym $mod+2  workspace $w12
+bindsym $mod+3  workspace $w13
+bindsym $mod+4  workspace $w14
+bindsym $mod+F1 workspace $w15
 
 # move focused container to workspace
-bindsym $mod+Shift+1  move container to workspace $w1
-bindsym $mod+Shift+2  move container to workspace $w2
-bindsym $mod+Shift+3  move container to workspace $w3
-bindsym $mod+Shift+4  move container to workspace $w4
-bindsym $mod+Shift+F1 move container to workspace $w5
+bindsym $mod+Shift+1  move container to workspace $w11
+bindsym $mod+Shift+2  move container to workspace $w12
+bindsym $mod+Shift+3  move container to workspace $w13
+bindsym $mod+Shift+4  move container to workspace $w14
+bindsym $mod+Shift+F1 move container to workspace $w15
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
