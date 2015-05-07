@@ -148,9 +148,11 @@ bar {
   status_command i3blocks
   strip_workspace_numbers yes
   tray_output VGA-0
+  position top
+  separator_symbol "  "
   colors {
-	background #222222
-	statusline #dddddd
+	background #272727
+	statusline #e7e7e7
 	separator  #666666
 	focused_workspace  #0088CC #0088CC #ffffff
 	active_workspace   #333333 #333333 #888888
@@ -158,6 +160,7 @@ bar {
 	urgent_workspace   #569eea #569eea #333333
   }
 }
+
 set $Locker i3lock -d && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -201,9 +204,9 @@ bindsym $mod+Shift+m mode "$mode_cmus"
 for_window [class="Opera|Firefox|chrome|V*Box"]         border none
 for_window [class="Youdao|Steam"]                       border none    floating enable
 for_window [class="LilyTerm|Terminator"]                border pixel 3
+for_window [class="Thunar|feh|lyrics|config|Ristretto"] border normal  floating enable
 for_window [class="mplayer|mpv|bomi|dota|vim"]          border pixel 3 floating enable
-for_window [class="Thunar|feh|lyrics|config|Ristretto"] floating enable
-for_window [title="Preferences"]                        floating enable
+for_window [title="Preference"]                         border pixel 3 floating enable
 
 #autostart
 exec --no-startup-id fcitx
