@@ -16,7 +16,9 @@ if [ -f $HOME/.Xmodmap ]; then
 fi
 
 # exec openbox-session
+# exec awesome
 exec i3
+# exec xmonad
 # exec cinnamon-session
 # exec startdde
 # exec gnome-session

@@ -265,6 +265,7 @@ keycode  22 = grave asciitilde BackSpace asciitilde
 keycode  37 = Mode_switch NoSymbol Mode_switch
 keycode  49 = Escape NoSymbol Escape
 keycode  66 = Control_L NoSymbol Control_L
+keycode 119 = Delete BackSpace Delete
 keycode 134 = Mode_switch NoSymbol Mode_switch
 
 keycode  13 = 4 dollar End dollar
