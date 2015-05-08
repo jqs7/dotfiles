@@ -1,3 +1,5 @@
+" vim config of Jqs7
+" fork from https://github.com/amix/vimrc basic version
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -348,6 +350,8 @@ call vundle#begin()
     Plugin 'plasticboy/vim-markdown'
     Plugin 'junegunn/goyo.vim'
     Plugin 'majutsushi/tagbar'
+    Plugin 'Lokaltog/vim-easymotion'
+    Plugin 'szw/vim-ctrlspace'
 call vundle#end()
 
 "dracula settings
@@ -357,7 +361,7 @@ let g:dracula_italic = 1
 "nerdtree
 let NERDTreeHighlightCursorline=1
 
-"ctrlp显示隐藏文件
+"ctrlp
 let g:ctrlp_show_hidden = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
@@ -368,6 +372,9 @@ let g:ctrlp_custom_ignore = {
 "complete
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+"easymotion
+let g:EasyMotion_leader_key='ff'
+
 "go-vim
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
@@ -376,12 +383,12 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-"自动保存设置
+"autosave
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
-"airline设置
+"airline
 let g:airline_powerline_fonts = 1
 "let g:airline_section_a = airline#section#create([" ","mode"])
 let g:airline#extensions#tabline#enabled = 1
@@ -390,13 +397,13 @@ let g:airline_theme='bubblegum'
 "bufferline
 let g:bufferline_echo = 0
 
-"恢复Alt键功能
+"take alt back
 set ttimeoutlen=1
 for UseAlt in range (65 , 90 ) + range ( 97 , 122)
     exe "set <M-" .nr2char(UseAlt).">=\<Esc>" .nr2char (UseAlt)
 endfor
 
-"按键映射
+"keys
 map  <M-w>         :Bclose<CR>
 map  <M-h>         :bp<CR>
 map  <M-l>         :bn<CR>
