@@ -205,27 +205,29 @@ bindsym $mod+Shift+m mode "$mode_cmus"
 for_window [class="Opera|Firefox|chrome|V*Box"]         border none
 for_window [class="Youdao|Steam"]                       border none    floating enable
 for_window [class="LilyTerm|Terminator"]                border pixel 3
-for_window [class="Thunar|feh|lyrics|config|Ristretto"] border normal  floating enable
+for_window [class="Thunar|feh|lyrics|config|Ristretto"] floating enable
 for_window [class="mplayer|mpv|bomi|dota|vim"]          border pixel 3 floating enable
 for_window [title="Preference"]                         border pixel 3 floating enable
 
 #autostart
-exec --no-startup-id fcitx
-exec --no-startup-id compton -b --config ~/.compton.conf
-exec --no-startup-id thunar --daemon &
-exec --no-startup-id google-chrome-stable --no-startup-window
-exec --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -font "wenquanyi micro hei mono" -terminal $term -opacity 87 -width 27 -padding 11 -fg-active "#fff333" $(~/bin/i3-color-rofi)
+exec_always --no-startup-id fcitx
+exec_always --no-startup-id compton -b --config ~/.compton.conf
+exec_always --no-startup-id thunar --daemon &
+exec_always --no-startup-id google-chrome-stable --no-startup-window
+exec_always --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -font "wenquanyi micro hei mono" -terminal $term -opacity 87 -width 27 -padding 11 -fg-active "#fff333" $(~/bin/i3-color-rofi)
 
 #wallpaper
 set $wp "/home/se7en/Pictures/wallhaven-9766.jpg"
-exec --no-startup-id feh --bg-fill $wp
+exec_always --no-startup-id feh --bg-fill $wp
 bindsym $mod+7  exec feh --bg-fill $wp
 
-#对调ctrl与caps lock
-#exec --no-startup-id setxkbmap -option ctrl:swapcaps
+#screenshot
+set $ps "/home/se7en/VirtualBox VMs/Share/$(date +%F-%H-%m-%S)-$RANDOM.png"
+bindsym Print       --release exec maim -s --nokeyboard      $ps
+bindsym Shift+Print --release exec maim    --nokeyboard      $ps
+bindsym $mod+Print  --release exec maim -s --nokeyboard -d 5 $ps
 
 #others
-bindsym $mod+Print   exec xfce4-screenshooter
 bindsym $mod+Shift+d exec thunar
 hide_edge_borders vertical
 mouse_warping none

@@ -25,6 +25,7 @@ exec i3
 # exec startdde
 # exec gnome-session
 # exec startkde
+# exec startlxqt
 # exec startxfce4
 # sxhkd &
 # exec bspwm
