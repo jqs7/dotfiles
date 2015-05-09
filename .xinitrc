@@ -18,6 +18,7 @@ fi
 # exec openbox-session
 # exec awesome
 exec i3
+# exec herbstluftwm
 # 2bwm &
 # exec terminator
 # exec xmonad
