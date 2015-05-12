@@ -11,7 +11,7 @@ export UPDATE_ZSH_DAYS=1
 
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git archlinux sudo systemd encode64 z t pass vagrant colored-man extract rsync)
+plugins=(git sudo systemd encode64 z t pass vagrant colored-man extract rsync)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
@@ -26,7 +26,9 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-alias ssh='mosh'
+alias s='mosh'
+alias pacman='sudo aura'
+alias rm='trash'
 alias gd='git diff  --ignore-space-change'
 alias hdg='hexo d -g'
 alias adl='aria2c'
@@ -77,17 +79,3 @@ elif compctl &>/dev/null; then
   compctl -K _twei_completion -f twei
 fi
 ###-end-twei-completion-###
-
-# Setup zsh-autosuggestions
-source /home/se7en/.zsh-autosuggestions/autosuggestions.zsh
-
-# Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-
-zle -N zle-line-init
-
-# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-# zsh-autosuggestions is designed to be unobtrusive)
-bindkey '^T' autosuggest-toggle

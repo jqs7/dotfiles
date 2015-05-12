@@ -84,6 +84,7 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 set $w01 "1:"
+set $w02 "2:"
 set $w11 "1:"
 set $w12 "2:"
 set $w13 "3:"
@@ -92,6 +93,7 @@ set $w15 "5:"
 
 # Workspace names
 Workspace $w01 output LVDS
+Workspace $w02 output LVDS
 workspace $w11 output VGA-0
 workspace $w12 output VGA-0
 workspace $w13 output VGA-0
@@ -99,18 +101,22 @@ workspace $w14 output VGA-0
 workspace $w15 output VGA-0
 
 # switch to workspace
-bindsym $mod+1  workspace $w11
-bindsym $mod+2  workspace $w12
-bindsym $mod+3  workspace $w13
-bindsym $mod+4  workspace $w14
-bindsym $mod+F1 workspace $w15
+bindsym $mod+Ctrl+1  workspace $w01
+bindsym $mod+Ctrl+2  workspace $w02
+bindsym $mod+1       workspace $w11
+bindsym $mod+2       workspace $w12
+bindsym $mod+3       workspace $w13
+bindsym $mod+4       workspace $w14
+bindsym $mod+F1      workspace $w15
 
 # move focused container to workspace
-bindsym $mod+Shift+1  move container to workspace $w11
-bindsym $mod+Shift+2  move container to workspace $w12
-bindsym $mod+Shift+3  move container to workspace $w13
-bindsym $mod+Shift+4  move container to workspace $w14
-bindsym $mod+Shift+F1 move container to workspace $w15
+bindsym $mod+Ctrl+Shift+1  move container to workspace $w01
+bindsym $mod+Ctrl+Shift+2  move container to workspace $w02
+bindsym $mod+Shift+1       move container to workspace $w11
+bindsym $mod+Shift+2       move container to workspace $w12
+bindsym $mod+Shift+3       move container to workspace $w13
+bindsym $mod+Shift+4       move container to workspace $w14
+bindsym $mod+Shift+F1      move container to workspace $w15
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -148,7 +154,7 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3blocks
   strip_workspace_numbers yes
-  tray_output VGA-0
+  tray_output LVDS
   position top
   separator_symbol "  "
   colors {
@@ -222,7 +228,7 @@ exec_always --no-startup-id feh --bg-fill $wp
 bindsym $mod+7  exec feh --bg-fill $wp
 
 #screenshot
-set $ps "/home/se7en/VirtualBox VMs/Share/$(date +%F-%H-%m-%S)-$RANDOM.png"
+set $ps "/home/se7en/VirtualBox VMs/Share/$(date +%F-%H-%M-%S)-$RANDOM.png"
 bindsym Print       --release exec maim -s --nokeyboard      $ps
 bindsym Shift+Print --release exec maim    --nokeyboard      $ps
 bindsym $mod+Print  --release exec maim -s --nokeyboard -d 5 $ps
