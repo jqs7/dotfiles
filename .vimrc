@@ -195,12 +195,6 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<CR>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<CR>:pwd<cr>
 
-" Specify the behavior when switching between buffers
-try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
-catch
-endtry
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -352,7 +346,13 @@ call vundle#begin()
     Plugin 'majutsushi/tagbar'
     Plugin 'Lokaltog/vim-easymotion'
     Plugin 'szw/vim-ctrlspace'
+    Plugin 'tell-k/vim-autopep8'
 call vundle#end()
+
+"python
+let g:autopep8_disable_show_diff=1
+autocmd FileType python nmap <buffer> <F5> :call Autopep8()<CR>
+autocmd FileType python nmap <buffer> <F6> :exec '!python' shellescape(@%, 1)<CR>
 
 "dracula settings
 color dracula
@@ -370,7 +370,9 @@ let g:ctrlp_custom_ignore = {
   \}
 
 "complete
+let g:ycm_goto_buffer_command = 'horizontal-split'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_seed_identifiers_with_syntax=1
 
 "easymotion
 let g:EasyMotion_leader_key='ff'
@@ -390,7 +392,6 @@ let g:auto_save_silent = 1
 
 "airline
 let g:airline_powerline_fonts = 1
-"let g:airline_section_a = airline#section#create([" ","mode"])
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='bubblegum'
 

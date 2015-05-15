@@ -17,6 +17,8 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin
 
 export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:~/.linuxbrew/bin
 
+export PYTHONPATH=/usr/lib/python3.4/site-packages
+
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions

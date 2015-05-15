@@ -9,4 +9,5 @@ export no_proxy="/var/run/docker.sock"
 export GOPATH=~/.gogets:~/GOPATH
 export GOBIN=~/bin
 export VBOX_USB=usbfs
+export PATH=$PATH:~/.gem/ruby/2.2.0/bin:~/bin:~/.linuxbrew/bin
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

@@ -221,9 +221,10 @@ exec_always --no-startup-id compton -b --config ~/.compton.conf
 exec_always --no-startup-id thunar --daemon &
 exec_always --no-startup-id google-chrome-stable --no-startup-window
 exec_always --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -font "wenquanyi micro hei mono" -terminal $term -opacity 87 -width 27 -padding 11 -fg-active "#fff333" $(~/bin/i3-color-rofi)
+exec_always --no-startup-id xset dpms 3600
 
 #wallpaper
-set $wp "/home/se7en/Pictures/wallhaven-9766.jpg"
+set $wp "/home/se7en/Pictures/wallpaper-28479.jpg"
 exec_always --no-startup-id feh --bg-fill $wp
 bindsym $mod+7  exec feh --bg-fill $wp
 
