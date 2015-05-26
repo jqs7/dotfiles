@@ -334,7 +334,6 @@ call vundle#begin()
     Plugin 'crusoexia/vim-dracula'
     Plugin 'PotatoesMaster/i3-vim-syntax'
     Plugin 'vim-auto-save'
-    Plugin 'suan/vim-instant-markdown'
     Plugin 'tpope/vim-fugitive'
     Plugin 'bling/vim-airline'
     Plugin 'jiangmiao/auto-pairs'
@@ -370,9 +369,9 @@ let g:ctrlp_custom_ignore = {
   \}
 
 "complete
-let g:ycm_goto_buffer_command = 'horizontal-split'
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "easymotion
 let g:EasyMotion_leader_key='ff'

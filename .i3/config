@@ -213,7 +213,7 @@ for_window [class="Youdao|Steam"]                       border none    floating 
 for_window [class="LilyTerm|Terminator"]                border pixel 3
 for_window [class="Thunar|feh|lyrics|config|Ristretto"] floating enable
 for_window [class="mplayer|mpv|bomi|dota|vim"]          border pixel 3 floating enable
-for_window [title="Preference"]                         border pixel 3 floating enable
+for_window [title="Preference|Cutegram|Telegram"]       border pixel 3 floating enable
 
 #autostart
 exec_always --no-startup-id fcitx
@@ -229,7 +229,7 @@ exec_always --no-startup-id feh --bg-fill $wp
 bindsym $mod+7  exec feh --bg-fill $wp
 
 #screenshot
-set $ps "/home/se7en/VirtualBox VMs/Share/$(date +%F-%H-%M-%S)-$RANDOM.png"
+set $ps "/home/se7en/Share/Screenshots/$(date +%F-%H-%M-%S)-$RANDOM.png"
 bindsym Print       --release exec maim -s --nokeyboard      $ps
 bindsym Shift+Print --release exec maim    --nokeyboard      $ps
 bindsym $mod+Print  --release exec maim -s --nokeyboard -d 5 $ps

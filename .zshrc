@@ -29,7 +29,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 alias s='mosh'
-alias pacman='sudo aura'
+alias pacman='sudo -E aura'
 alias rm='trash'
 alias gd='git diff  --ignore-space-change'
 alias hdg='hexo d -g'
