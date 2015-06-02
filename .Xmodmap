@@ -255,27 +255,28 @@ keycode 255 =
 !  66 -- caps
 ! 134 -- super_R
 !------------------
-clear         lock 
-clear         control 
-clear         mod4
-add control = Caps_Lock Control_R
-add    mod4 = Super_L
-keycode   9 = Caps_Lock NoSymbol Caps_Lock
-keycode  22 = grave asciitilde BackSpace asciitilde
-keycode  37 = Mode_switch NoSymbol Mode_switch
-keycode  49 = Escape NoSymbol Escape
-keycode  66 = Control_L NoSymbol Control_L
-keycode 119 = Delete BackSpace Delete
-keycode 134 = Mode_switch NoSymbol Mode_switch
+!clear         lock 
+!clear         control 
+!clear         mod4
+!add control = Caps_Lock Control_R
+!add    mod4 = Super_L
+!keycode   9 = Caps_Lock NoSymbol Caps_Lock
+!keycode  22 = grave asciitilde BackSpace asciitilde
+!keycode  37 = Mode_switch NoSymbol Mode_switch
+!keycode  49 = Escape NoSymbol Escape
+!keycode  66 = Control_L NoSymbol Control_L
+!keycode 119 = Delete BackSpace Delete
+!keycode 134 = Mode_switch NoSymbol Mode_switch
+!keycode 135 = BackSpace BackSpace BackSpace BackSpace
 
-keycode  13 = 4 dollar End dollar
-keycode  19 = 0 parenright Home parenright
-keycode  33 = p P Prior P
-keycode  43 = h H Left  H
-keycode  44 = j J Down  J
-keycode  45 = k K Up    K
-keycode  46 = l L Right L
-keycode  57 = n N Next  N
+!keycode  13 = 4 dollar End dollar
+!keycode  19 = 0 parenright Home parenright
+!keycode  33 = p P Prior P
+!keycode  43 = h H Left  H
+!keycode  44 = j J Down  J
+!keycode  45 = k K Up    K
+!keycode  46 = l L Right L
+!keycode  57 = n N Next  N
 !----------after----------
 !       esc -> caps
 !      caps -> ctrl_L

@@ -333,12 +333,10 @@ call vundle#begin()
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'crusoexia/vim-dracula'
     Plugin 'PotatoesMaster/i3-vim-syntax'
-    Plugin 'vim-auto-save'
     Plugin 'tpope/vim-fugitive'
     Plugin 'bling/vim-airline'
     Plugin 'jiangmiao/auto-pairs'
     Plugin 'tpope/vim-surround'
-    Plugin 'bling/vim-bufferline'
     Plugin 'godlygeek/tabular'
     Plugin 'plasticboy/vim-markdown'
     Plugin 'junegunn/goyo.vim'
@@ -384,18 +382,10 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-"autosave
-let g:auto_save = 1
-let g:auto_save_in_insert_mode = 0
-let g:auto_save_silent = 1
-
 "airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='bubblegum'
-
-"bufferline
-let g:bufferline_echo = 0
 
 "take alt back
 set ttimeoutlen=1
