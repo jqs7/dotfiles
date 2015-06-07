@@ -188,11 +188,12 @@ bindsym $mod+Shift+e mode "$mode_system"
 bindsym $mod+minus       scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
-#xrandr
-bindsym $mod+p            exec xrandr --output VGA-0 --off
-bindsym $mod+Shift+p      exec xrandr --output VGA-0 --auto --output LVDS --off
-bindsym $mod+Ctrl+Shift+p exec xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
-exec --no-startup-id xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary
+#xrandr and wallpaper
+set $wp "/home/se7en/Pictures/wallpaper-28479.jpg"
+bindsym $mod+p            exec xrandr --output VGA-0 --off && feh --bg-fill $wp
+bindsym $mod+Shift+p      exec xrandr --output VGA-0 --auto --output LVDS --off && feh --bg-fill $wp
+bindsym $mod+Ctrl+Shift+p exec xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary && feh --bg-fill $wp
+exec --no-startup-id xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary && feh --bg-fill $wp
 
 #cmus
 set $mode_cmus Cmus (c) pause, (n) next, (p) prev, (h) -5s, (l) +5s
@@ -221,13 +222,9 @@ exec_always --no-startup-id fcitx
 exec_always --no-startup-id compton -b --config ~/.compton.conf
 exec_always --no-startup-id thunar --daemon &
 exec_always --no-startup-id google-chrome-stable --no-startup-window
-exec_always --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -font "wenquanyi micro hei mono" -terminal $term -opacity 87 -width 27 -padding 11 -fg-active "#fff333" $(~/bin/i3-color-rofi)
-exec_always --no-startup-id xset dpms 3600
-
-#wallpaper
-set $wp "/home/se7en/Pictures/wallpaper-28479.jpg"
-exec_always --no-startup-id feh --bg-fill $wp
-bindsym $mod+7  exec feh --bg-fill $wp
+exec_always --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -terminal sakura -opacity 87 -width 27 -padding 11 -fg-active "#fff333" $(~/bin/i3-color-rofi)
+exec_always --no-startup-id xset -dpms && xset s off
+exec_always --no-startup-id numlockx on
 
 #screenshot
 set $ps "/home/se7en/Share/Screenshots/$(date +%F-%H-%M-%S)-$RANDOM.png"
