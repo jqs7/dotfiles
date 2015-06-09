@@ -38,6 +38,12 @@ alias adlrpc='aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all'
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
 alias 7tmux='Term=screen-256 tmux -2 a -t "[Jqs7]" || Term=screen-256 tmux -2 new-session -s "[Jqs7]"'
 
+function lazygit() {
+  git add .
+  git commit -a -m "$1"
+  git push
+}
+
 ###-begin-twei-completion-###
 ### credits to npm, this file is coming directly from isaacs/npm repo
 #

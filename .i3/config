@@ -213,7 +213,7 @@ for_window [class="Opera|Firefox|chrome|V*Box"]         border none
 for_window [class="Youdao|Steam|Wine"]                  border none    floating enable
 for_window [class="LilyTerm|Terminator|jetbrain"]       border pixel 3
 for_window [class="Thunar|feh|lyrics|config|Ristretto"] floating enable
-for_window [class="mplayer|mpv|bomi|dota|vim"]          border pixel 3 floating enable
+for_window [class="MPlayer|mpv|bomi|dota|vim"]          border pixel 3 floating enable
 for_window [class="telegram"]                           border pixel 3 floating enable
 for_window [title="Preference|Cutegram"]                border pixel 3 floating enable
 
