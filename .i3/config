@@ -196,9 +196,9 @@ bindsym $mod+Ctrl+Shift+p exec xrandr --output LVDS --auto --pos 0x0 --output VG
 exec --no-startup-id xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary && feh --bg-fill $wp
 
 #cmus
-set $mode_cmus Cmus (c) pause, (n) next, (p) prev, (h) -5s, (j) vol-5, (k) vol+5, (l) +5s
+set $mode_cmus Cmus (i) pause, (n) next, (p) prev, (h) -5s, (j) vol-5, (k) vol+5, (l) +5s
 mode "$mode_cmus" {
-    bindsym c      exec cmus-remote --pause, mode "default"
+    bindsym i      exec cmus-remote --pause, mode "default"
     bindsym n      exec cmus-remote --next
     bindsym p      exec cmus-remote --prev
     bindsym h      exec cmus-remote --seek -5
