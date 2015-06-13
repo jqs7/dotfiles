@@ -1,0 +1,9 @@
+[user]
+	name = Jqs7
+	email = 7@jqs7.com
+[push]
+	default = matching
+[core]
+        gitproxy = /home/se7en/bin/httpproxywrapper
+[alias]
+	ac = !git add -A && git commit

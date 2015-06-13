@@ -41,7 +41,7 @@ alias 7tmux='Term=screen-256 tmux -2 a -t "[Jqs7]" || Term=screen-256 tmux -2 ne
 # git add commit and push -- all in one command
 function lazygit() {
   git add .
-  git commit -a -m "$1"
+  git commit -a
   git push
 }
 
