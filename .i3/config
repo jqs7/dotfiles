@@ -235,6 +235,7 @@ bindsym $mod+Print  --release exec maim -s --nokeyboard -d 5 $ps
 
 #others
 bindsym $mod+Shift+d exec thunar
+bindsym $mod+Shift+z exec telegram
 hide_edge_borders vertical
 mouse_warping none
 focus_follows_mouse no
