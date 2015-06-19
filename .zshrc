@@ -38,10 +38,15 @@ alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"
 alias 7tmux='Term=screen-256 tmux -2 a -t "[Jqs7]" || Term=screen-256 tmux -2 new-session -s "[Jqs7]"'
 
 # git add commit and push -- all in one command
-function lazygit() {
+function lazypush() {
   git add . &&
   git commit -am "$*" &&
   git push
+}
+
+function lazycommit() {
+  git add . &&
+  git commit -am "$*"
 }
 
 ###-begin-twei-completion-###
