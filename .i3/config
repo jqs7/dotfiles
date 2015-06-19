@@ -195,14 +195,14 @@ bindsym $mod+Ctrl+Shift+p exec xrandr --output LVDS --auto --pos 0x0 --output VG
 exec --no-startup-id xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary && feh --bg-fill $wp
 
 #cmus
-set $mode_cmus Cmus (i) pause, (n) next, (p) prev, (h) -5s, (j) vol-5, (k) vol+5, (l) +5s
+set $mode_cmus Cmus (i) pause, (n) next, (p) prev, (h) -5s, (l) +5s
 mode "$mode_cmus" {
     bindsym i      exec cmus-remote --pause, mode "default"
     bindsym n      exec cmus-remote --next
     bindsym p      exec cmus-remote --prev
     bindsym h      exec cmus-remote --seek -5
-    bindsym j      exec cmus-remote --volume -2
-    bindsym k      exec cmus-remote --volume +2
+    # bindsym j      exec cmus-remote --volume -2
+    # bindsym k      exec cmus-remote --volume +2
     bindsym l      exec cmus-remote --seek +5
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -226,6 +226,7 @@ exec_always --no-startup-id google-chrome-stable --no-startup-window
 exec_always --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -terminal sakura -opacity 87 -width 27 -padding 11 -fg-active "#fff333" $(~/bin/i3-color-rofi)
 exec_always --no-startup-id xset -dpms && xset s off
 exec_always --no-startup-id numlockx on
+exec --no-startup-id aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -D
 
 #screenshot
 set $ps "/home/se7en/Share/Screenshots/$(date +%F-%H-%M-%S)-$RANDOM.png"
