@@ -245,20 +245,19 @@ mode "$mode_cmus" {
 bindsym $mod+Shift+m mode "$mode_cmus"
 
 #window
-for_window [class="Opera|Firefox|chrome|V*Box"]         border none
 for_window [class="Youdao|Steam|Wine"]                  border none    floating enable
+for_window [class="Opera|Firefox|chrome|V*Box"]         border pixel 3
 for_window [class="LilyTerm|Terminator|jetbrain"]       border pixel 3
 for_window [class="Thunar|feh|lyrics|config|Ristretto"] floating enable
 for_window [class="MPlayer|mpv|bomi|dota|vim"]          border pixel 3 floating enable
-for_window [class="Telegram"]                           border pixel 3 floating enable
-for_window [title="Preference|Cutegram"]                border pixel 3 floating enable
+for_window [title="Preference|Cutegram|Telegram"]       border pixel 3 floating enable
 
 #autostart
 exec_always --no-startup-id fcitx
 exec_always --no-startup-id compton -b --config ~/.compton.conf
 exec_always --no-startup-id thunar --daemon &
 exec_always --no-startup-id google-chrome-stable --no-startup-window
-exec_always --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -terminal sakura -opacity 87 -width 27 -padding 11 -fg-active "#fff333" $(~/bin/i3-color-rofi)
+exec_always --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -terminal sakura -opacity 87 -width 27 -padding 11  $(~/bin/i3-color-rofi)
 exec_always --no-startup-id xset -dpms && xset s off
 exec_always --no-startup-id numlockx on
 exec --no-startup-id aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -D
