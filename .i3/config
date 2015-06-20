@@ -11,6 +11,40 @@
 
 set $mod Mod4
 
+# tango dark
+set $darkblue       #204A87
+set $darkbrown      #8F5902
+set $darkgreen      #4E9A06
+set $darkmagenta    #5C3566
+set $darkred        #A40000
+set $darkyellow     #C4A000
+set $darkorange     #CE5C00
+
+# tango light
+set $lightblue      #729FCF
+set $lightbrown     #E9B96E
+set $lightgreen     #8AE234
+set $lightmagenta   #AD7FA8
+set $lightred       #EF2929
+set $lightyellow    #FCE94F
+set $lightorange    #FCAF3E
+
+# tango normal
+set $blue           #3465A4
+set $brown          #C17D11
+set $green          #73D216
+set $magenta        #75507B
+set $red            #CC0000
+set $yellow         #EDD400
+set $orange         #F57900
+
+# tango mono
+set $black          #555753
+set $grey           #BABDB6
+set $white          #EEEEEC
+set $darkblack      #2E3436
+set $darkgrey       #888A85
+set $darkwhite      #D3D7CF
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -158,27 +192,28 @@ bar {
   position top
   separator_symbol "  "
   colors {
-	background #272727
-	statusline #e7e7e7
-	separator  #666666
-	focused_workspace  #0088CC #0088CC #ffffff
-	active_workspace   #333333 #333333 #888888
-	inactive_workspace #333333 #333333 #888888
-	urgent_workspace   #569eea #569eea #333333
+    # <workclass> <border> <backg> <text>
+    background          #222222
+    separator           #444444
+    statusline          $darkgrey
+    focused_workspace   $lightblue $blue      $white
+    active_workspace    $darkgrey  $black     $grey
+    inactive_workspace  $black     $darkblack $grey
+    urgent_workspace    $lightred  $red       $white
   }
 }
 
 set $Locker i3lock -d && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym e       exec --no-startup-id i3-msg exit,                    mode "default"
-    bindsym l       exec --no-startup-id $Locker,                        mode "default"
-    bindsym s       exec --no-startup-id $Locker && systemctl suspend,   mode "default"
-    bindsym h       exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-    bindsym r       exec --no-startup-id systemctl reboot,               mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i,          mode "default"  
-    bindsym Return  mode "default"
-    bindsym Escape  mode "default"
+    bindsym e        exec --no-startup-id i3-msg exit,                    mode "default"
+    bindsym l        exec --no-startup-id $Locker,                        mode "default"
+    bindsym s        exec --no-startup-id $Locker && systemctl suspend,   mode "default"
+    bindsym h        exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r        exec --no-startup-id systemctl reboot,               mode "default"
+    bindsym Shift+s  exec --no-startup-id systemctl poweroff -i,          mode "default"  
+    bindsym Return   mode "default"
+    bindsym Escape   mode "default"
 }
 bindsym $mod+Shift+e mode "$mode_system"
 
@@ -237,15 +272,14 @@ bindsym $mod+Print  --release exec maim -s --nokeyboard -d 5 $ps
 #others
 bindsym $mod+Shift+d exec thunar
 bindsym $mod+Shift+z exec telegram
-hide_edge_borders vertical
-mouse_warping none
+hide_edge_borders   vertical
+mouse_warping       none
 focus_follows_mouse no
 ############################################################################################################
 
-# class                 border  backgr. text    indicator
-client.focused          #0088CC #0088CC #ffffff #dddddd
-#client.focused_inactive #0C2D3C #0C2D3C #888888 #484e50 # I don't like it that way
-client.focused_inactive #333333 #333333 #888888 #292d2e
-client.unfocused        #333333 #333333 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
+# class                 border     backgr.    text    indicator
+client.focused          $lightblue $blue      $white  $lightblue
+client.focused_inactive $darkgrey  $black     $grey   $darkgrey
+client.unfocused        $black     $darkblack $grey   $darkgrey
+client.urgent           $lightred  $red       $white  $lightred
 # vim:filetype=i3
