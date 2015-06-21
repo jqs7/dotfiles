@@ -62,7 +62,9 @@ floating_modifier $mod
 
 # start a terminal
 set $term terminator
+set $term2 lilyterm
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term2
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -192,14 +194,14 @@ bar {
   position top
   separator_symbol "  "
   colors {
-    # <workclass> <border> <backg> <text>
     background          #222222
     separator           #444444
-    statusline          $darkgrey
+    statusline          $lightorange
+    # <workclass>       <border>   <backg>    <text>
     focused_workspace   $lightblue $blue      $white
     active_workspace    $darkgrey  $black     $grey
     inactive_workspace  $black     $darkblack $grey
-    urgent_workspace    $lightred  $red       $white
+    urgent_workspace    $lightblue $darkgreen $white
   }
 }
 
@@ -246,7 +248,8 @@ bindsym $mod+Shift+m mode "$mode_cmus"
 
 #window
 for_window [class="Youdao|Steam|Wine"]                  border none    floating enable
-for_window [class="Opera|Firefox|chrome|V*Box"]         border pixel 3
+for_window [class="V*Box"]                              border none
+for_window [class="Opera|Firefox|chrome"]               border pixel 3
 for_window [class="LilyTerm|Terminator|jetbrain"]       border pixel 3
 for_window [class="Thunar|feh|lyrics|config|Ristretto"] floating enable
 for_window [class="MPlayer|mpv|bomi|dota|vim"]          border pixel 3 floating enable
