@@ -253,7 +253,7 @@ for_window [class="Opera|Firefox|chrome"]               border pixel 3
 for_window [class="LilyTerm|Terminator|jetbrain"]       border pixel 3
 for_window [class="Thunar|feh|lyrics|config|Ristretto"] floating enable
 for_window [class="MPlayer|mpv|bomi|dota|vim"]          border pixel 3 floating enable
-for_window [title="Preference|Cutegram|Telegram"]       border pixel 3 floating enable
+for_window [class="Preference|Cutegram|Telegram"]       border pixel 3 floating enable
 
 #autostart
 exec_always --no-startup-id fcitx
