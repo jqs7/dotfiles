@@ -238,8 +238,8 @@ mode "$mode_cmus" {
     bindsym n      exec cmus-remote --next
     bindsym p      exec cmus-remote --prev
     bindsym h      exec cmus-remote --seek -5
-    # bindsym j      exec cmus-remote --volume -2
-    # bindsym k      exec cmus-remote --volume +2
+    #bindsym j      exec cmus-remote --vol -2%
+    #bindsym k      exec cmus-remote --vol +2%
     bindsym l      exec cmus-remote --seek +5
     bindsym Return mode "default"
     bindsym Escape mode "default"

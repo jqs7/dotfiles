@@ -1,5 +1,5 @@
 [global_config]
-  custom_url_handler = google-chrome-stable
+  custom_url_handler = firefox
   title_hide_sizetext = True
   dbus = True
   use_custom_url_handler = True
