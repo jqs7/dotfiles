@@ -320,72 +320,76 @@ set nocompatible
 set helplang=cn
 set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
 set relativenumber
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-    Plugin 'gmarik/Vundle.vim'
-    Plugin 'fcitx.vim'
-    Plugin 'Valloric/YouCompleteMe'
-    Plugin 'terryma/vim-multiple-cursors'
-    Plugin 'asins/vimcdoc'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'kien/ctrlp.vim'
-    Plugin 'fatih/vim-go'
-    Plugin 'scrooloose/nerdcommenter'
-    Plugin 'crusoexia/vim-dracula'
-    Plugin 'PotatoesMaster/i3-vim-syntax'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'bling/vim-airline'
-    Plugin 'jiangmiao/auto-pairs'
-    Plugin 'tpope/vim-surround'
-    Plugin 'godlygeek/tabular'
-    Plugin 'plasticboy/vim-markdown'
-    Plugin 'junegunn/goyo.vim'
-    Plugin 'majutsushi/tagbar'
-    Plugin 'Lokaltog/vim-easymotion'
-    Plugin 'szw/vim-ctrlspace'
-    Plugin 'tell-k/vim-autopep8'
-call vundle#end()
 
-"python
-let g:autopep8_disable_show_diff=1
-autocmd FileType python nmap <buffer> <F5> :call Autopep8()<CR>
-autocmd FileType python nmap <buffer> <F6> :exec '!python' shellescape(@%, 1)<CR>
+call plug#begin('~/.vim/bundle')
+  Plug 'fcitx.vim'
 
-"dracula settings
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer'  }
+    let g:ycm_seed_identifiers_with_syntax = 1
+    let g:ycm_min_num_of_chars_for_completion = 1
+    let g:ycm_autoclose_preview_window_after_insertion = 1
+
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'asins/vimcdoc'
+
+  Plug 'scrooloose/nerdtree'
+    let NERDTreeHighlightCursorline=1
+
+  Plug 'kien/ctrlp.vim'
+    let g:ctrlp_show_hidden = 1
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+    let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/]\.(git|hg|svn|idea)$',
+      \ 'file': '\v\.(mp3|jpg|png|gif)$',
+      \}
+
+  Plug 'fatih/vim-go'
+    let g:go_fmt_command = "goimports"
+    let g:go_highlight_functions = 1
+    let g:go_highlight_methods = 1
+    let g:go_highlight_structs = 1
+    let g:go_highlight_operators = 1
+    let g:go_highlight_build_constraints = 1
+
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'crusoexia/vim-dracula'
+  Plug 'PotatoesMaster/i3-vim-syntax'
+  Plug 'tpope/vim-fugitive'
+
+  Plug 'bling/vim-airline'
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_theme='bubblegum'
+
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'tpope/vim-surround'
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
+  Plug 'junegunn/goyo.vim'
+  Plug 'majutsushi/tagbar'
+  Plug 'scrooloose/syntastic'
+
+  Plug 'Lokaltog/vim-easymotion'
+    let g:EasyMotion_leader_key='ff'
+
+  Plug 'szw/vim-ctrlspace'
+
+  "python
+  Plug 'tell-k/vim-autopep8'
+    let g:autopep8_disable_show_diff=1
+    autocmd FileType python nmap <buffer> <F5> :call Autopep8()<CR>
+    autocmd FileType python nmap <buffer> <F6> :exec '!python' shellescape(@%, 1)<CR>
+
+  "javascript
+  Plug 'moll/vim-node'
+  Plug 'marijnh/tern_for_vim'
+    let g:tern_show_signature_in_pum = 1
+  Plug 'elixir-lang/vim-elixir'
+call plug#end()
+
+"color
 color dracula
 let g:dracula_italic = 1
-
-"nerdtree
-let NERDTreeHighlightCursorline=1
-
-"ctrlp
-let g:ctrlp_show_hidden = 1
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|idea)$',
-  \ 'file': '\v\.(mp3|jpg|png|gif)$',
-  \}
-
-"complete
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-"easymotion
-let g:EasyMotion_leader_key='ff'
-
-"go-vim
-let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-"airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='bubblegum'
 
 "take alt back
 set ttimeoutlen=1

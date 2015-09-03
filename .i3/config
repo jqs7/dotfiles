@@ -127,7 +127,6 @@ set $w13 "3:"
 set $w14 "4:"
 set $w15 "5:"
 
-# Workspace names
 Workspace $w01 output LVDS
 Workspace $w02 output LVDS
 workspace $w11 output VGA-0
@@ -136,7 +135,6 @@ workspace $w13 output VGA-0
 workspace $w14 output VGA-0
 workspace $w15 output VGA-0
 
-# switch to workspace
 bindsym $mod+Ctrl+1  workspace $w01
 bindsym $mod+Ctrl+2  workspace $w02
 bindsym $mod+1       workspace $w11
@@ -145,7 +143,6 @@ bindsym $mod+3       workspace $w13
 bindsym $mod+4       workspace $w14
 bindsym $mod+F1      workspace $w15
 
-# move focused container to workspace
 bindsym $mod+Ctrl+Shift+1  move container to workspace $w01
 bindsym $mod+Ctrl+Shift+2  move container to workspace $w02
 bindsym $mod+Shift+1       move container to workspace $w11
@@ -154,31 +151,20 @@ bindsym $mod+Shift+3       move container to workspace $w13
 bindsym $mod+Shift+4       move container to workspace $w14
 bindsym $mod+Shift+F1      move container to workspace $w15
 
-# reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width  5 px or 5 ppt
         bindsym j resize grow   height 5 px or 5 ppt
         bindsym k resize shrink height 5 px or 5 ppt
         bindsym l resize grow   width  5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left  resize shrink width  5 px or 5 ppt
         bindsym Down  resize grow   height 5 px or 5 ppt
         bindsym Up    resize shrink height 5 px or 5 ppt
         bindsym Right resize grow   width  5 px or 5 ppt
 
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -225,7 +211,7 @@ bindsym $mod+minus       scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
 #xrandr and wallpaper
-set $wp "/home/se7en/Pictures/wallpaper-28479.jpg"
+set $wp "/home/se7en/Pictures/wallhaven-19686.png"
 bindsym $mod+p            exec xrandr --output VGA-0 --off && feh --bg-fill $wp
 bindsym $mod+Shift+p      exec xrandr --output VGA-0 --auto --output LVDS --off && feh --bg-fill $wp
 bindsym $mod+Ctrl+Shift+p exec xrandr --output LVDS --auto --pos 0x0 --output VGA-0 --auto --pos 1368x0 --primary && feh --bg-fill $wp
@@ -256,17 +242,18 @@ for_window [class="MPlayer|mpv|bomi|dota|vim"]          border pixel 3 floating 
 for_window [class="Preference"]                         border pixel 3 floating enable
 
 #autostart
-exec        --no-startup-id nm-applet
 exec_always --no-startup-id fcitx
 exec_always --no-startup-id compton -b --config ~/.compton.conf
 exec_always --no-startup-id thunar --daemon &
 exec_always --no-startup-id google-chrome-stable --no-startup-window
-exec_always --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -terminal sakura -opacity 87 -width 27 -padding 11  $(~/bin/i3-color-rofi)
-exec_always --no-startup-id xset -dpms && xset s off
+exec_always --no-startup-id rofi -key-run $mod+d -key-window $mod+Tab -sidebar-mode -terminal sakura -opacity 87 -width 27 -padding 11 $(~/bin/i3-color-rofi)
+exec_always --no-startup-id xset dpms 3600
 exec_always --no-startup-id numlockx on
+exec_always --no-startup-id dunst
 exec        --no-startup-id aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -D
 exec        --no-startup-id /opt/telegram/Telegram -startintray
 exec        --no-startup-id thunderbird
+exec        --no-startup-id nm-applet
 
 #screenshot
 set $ps "/home/se7en/Share/Screenshots/$(date +%F-%H-%M-%S)-$RANDOM.png"
@@ -275,8 +262,10 @@ bindsym Shift+Print --release exec maim    --nokeyboard      $ps
 bindsym $mod+Print  --release exec maim -s --nokeyboard -d 5 $ps
 
 #others
-bindsym $mod+Shift+d exec thunar
+bindsym $mod+Shift+t exec thunar
 bindsym $mod+Shift+z exec telegram
+bindsym $mod+Shift+d exec ~/bin/pass-rofi
+bindsym $mod+Shift+9 exec teiler
 hide_edge_borders    vertical
 mouse_warping        none
 focus_follows_mouse  no

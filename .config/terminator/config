@@ -1,5 +1,5 @@
 [global_config]
-  custom_url_handler = firefox
+  custom_url_handler = google-chrome-stable
   title_hide_sizetext = True
   dbus = True
   use_custom_url_handler = True
@@ -20,7 +20,7 @@
     update_records = False
     show_titlebar = False
     custom_command = 'Term=screen-256 tmux -2 a -t "[Jqs7]"|| Term=screen-256 tmux -2 new-session -s "[Jqs7]"'
-    font = Source Code Pro for Powerline Medium 10
+    font = Source Code Pro for Powerline 10
     background_color = "#272727"
     scrollback_infinite = True
 [layouts]
